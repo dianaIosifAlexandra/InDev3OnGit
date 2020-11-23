@@ -1,0 +1,1 @@
+F:\INDev3\trunk\Source\BusinessLogic\UnitTests\BusinessLogicTests\obj\Debug\BusinessLogicTests.csprojResolveAssemblyReference.cache

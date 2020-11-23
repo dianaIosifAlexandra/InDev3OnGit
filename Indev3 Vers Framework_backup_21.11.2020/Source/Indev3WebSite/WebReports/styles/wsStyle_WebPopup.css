@@ -1,0 +1,74 @@
+﻿.wsMENU1
+{
+	font-size: 8pt;
+	color: black;
+	font-family: arial;
+	background-color: transparent;
+	text-decoration: none;
+}
+.wsMENU2
+{
+    BACKGROUND-COLOR: #f5e6ff;
+    BORDER-BOTTOM: black 1pt solid;
+    BORDER-LEFT: black 1pt solid;
+    BORDER-RIGHT: black 1pt solid;
+    BORDER-TOP: black 1pt solid;
+    COLOR: firebrick;
+    FONT-FAMILY: arial;
+    FONT-SIZE: 9pt;
+    WIDTH: 150pt
+}
+.wsMENU3
+{
+    BACKGROUND-COLOR: #f4fff2;
+    BORDER-BOTTOM: black 1pt solid;
+    BORDER-LEFT: black 1pt solid;
+    BORDER-RIGHT: black 1pt solid;
+    BORDER-TOP: black 1pt solid;
+    COLOR: darkgreen;
+    FONT-FAMILY: arial;
+    FONT-SIZE: 9pt;
+    WIDTH: 150pt
+}
+.wsValidateButton
+{
+	border-right: blue 1pt solid;
+	border-top: blue 1pt solid;
+	font-weight: bolder;
+	border-left: blue 1pt solid;
+	color: #404040;
+	border-bottom: blue 1pt solid;
+	font-family: Verdana;
+	background-color: lightgrey;
+}
+.wsMENUCaption1
+{
+	font-size: 10pt;
+	color: black;
+	font-family: arial;
+	text-align: center;
+	font-weight:bold;
+}
+.wsMENUTable
+{
+    BACKGROUND-COLOR: #FFFFDD;
+    BORDER-BOTTOM: black 1pt solid;
+    BORDER-LEFT: black 1pt solid;
+    BORDER-RIGHT: black 1pt solid;
+    BORDER-TOP: black 1pt solid
+}
+
+.wsMENUDiv
+{
+	overflow: auto;
+	text-align: center;
+}
+.wsMENU
+{
+    FONT-FAMILY: Verdana;
+    FONT-SIZE: 10pt
+}
+.wsMENUButtons
+{
+    TEXT-ALIGN: center
+}

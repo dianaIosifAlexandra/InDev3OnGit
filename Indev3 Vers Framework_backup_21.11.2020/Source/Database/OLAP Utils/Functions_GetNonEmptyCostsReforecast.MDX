@@ -1,0 +1,5 @@
+"--Get Non Empty reforecast costs
+SELECT NON EMPTY {[PROGRAM_LIST].[Project Name].Members} ON COLUMNS,
+             NON EMPTY {[PERIODS].Month.Members} ON ROWS
+FROM Functions
+WHERE ([Measures].[Cost], [CAT_FCT].[Total].[Reforecast])"

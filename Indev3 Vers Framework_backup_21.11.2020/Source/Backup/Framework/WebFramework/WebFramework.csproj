@@ -1,0 +1,147 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F919A55B-5C8E-40F9-A0FC-B061033D6E84}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Inergy.Indev3.WebFramework</RootNamespace>
+    <AssemblyName>Inergy.Indev3.WebFramework</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Inergy.Indev3.ApplicationFramework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\Inergy.Indev3.ApplicationFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Inergy.Indev3.BusinessLogic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\Inergy.Indev3.BusinessLogic.dll</HintPath>
+    </Reference>
+    <Reference Include="Inergy.Indev3.Entities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\Inergy.Indev3.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="RadAjax.Net2, Version=1.7.1.0, Culture=neutral, PublicKeyToken=3f7b438d1c762d0b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\RadAjax.Net2.dll</HintPath>
+    </Reference>
+    <Reference Include="RadCalendar.Net2, Version=2.1.1.0, Culture=neutral, PublicKeyToken=a1432cd341173140, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\RadCalendar.Net2.dll</HintPath>
+    </Reference>
+    <Reference Include="RadComboBox.Net2, Version=2.7.1.0, Culture=neutral, PublicKeyToken=175e9829b585f1f6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\RadComboBox.Net2.dll</HintPath>
+    </Reference>
+    <Reference Include="RadGrid.Net2, Version=4.6.1.0, Culture=neutral, PublicKeyToken=ec87bc2939ec45df, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\RadGrid.Net2.dll</HintPath>
+    </Reference>
+    <Reference Include="RadInput.Net2, Version=2.1.0.0, Culture=neutral, PublicKeyToken=a1432cd341173140, processorArchitecture=MSIL" />
+    <Reference Include="RadMenu.Net2, Version=4.3.1.0, Culture=neutral, PublicKeyToken=bbe59a8ad3533e68, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Bin\RadMenu.Net2.dll</HintPath>
+    </Reference>
+    <Reference Include="RadTabStrip.Net2, Version=3.6.0.0, Culture=neutral, PublicKeyToken=a87324b017ca21ce, processorArchitecture=MSIL" />
+    <Reference Include="RadUpload.Net2, Version=2.4.0.1000, Culture=neutral, PublicKeyToken=b4e93c26a31a21f0, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GenericControls\GenericEditControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GenericControls\GenericUserControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GenericControls\GenericViewControl.cs" />
+    <Compile Include="IndBaseControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IndBasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IndPopUpBasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utils\BreadCrumbUtils.cs" />
+    <Compile Include="Utils\BudgetUtils.cs" />
+    <Compile Include="Utils\ComboBoxUtils.cs" />
+    <Compile Include="Utils\CSSStrings.cs" />
+    <Compile Include="Utils\DownloadUtils.cs" />
+    <Compile Include="Utils\EntityUtils.cs" />
+    <Compile Include="Utils\IndConstants.cs" />
+    <Compile Include="Utils\SessionManager.cs" />
+    <Compile Include="Utils\SessionStrings.cs" />
+    <Compile Include="WebControls\Budget\AmountScaleComboBox.cs" />
+    <Compile Include="WebControls\Budget\IndBudgetContextMenu.cs" />
+    <Compile Include="WebControls\Budget\IndReforecastBudgetVarLabel.cs" />
+    <Compile Include="WebControls\Budget\IndReforecastGrid.cs" />
+    <Compile Include="WebControls\CatalogsWebControls\IGenericCatWebControl.cs" />
+    <Compile Include="WebControls\CatalogsWebControls\IndCatGrid.cs" />
+    <Compile Include="WebControls\CatalogsWebControls\IndCatGridPager.cs" />
+    <Compile Include="WebControls\CatalogsWebControls\IndCatTextBox.cs" />
+    <Compile Include="WebControls\CatalogsWebControls\IndCatCheckBox.cs" />
+    <Compile Include="WebControls\CatalogsWebControls\IndCatComboBox.cs" />
+    <Compile Include="WebControls\CatalogsWebControls\IndCatYearMonth.cs" />
+    <Compile Include="WebControls\CatalogsWebControls\IndCatDatePicker.cs" />
+    <Compile Include="WebControls\CatalogsWebControls\IndFilterItem.cs" />
+    <Compile Include="WebControls\CatalogsWebControls\IndGridBoundColumn.cs" />
+    <Compile Include="WebControls\CatalogsWebControls\IndGridDeleteColumn.cs" />
+    <Compile Include="WebControls\CatalogsWebControls\IndGridEditColumn.cs" />
+    <Compile Include="WebControls\CatalogsWebControls\IndCatLabel.cs" />
+    <Compile Include="WebControls\CatalogsWebControls\IndCatLastUserLabel.cs" />
+    <Compile Include="WebControls\CatalogsWebControls\IndGridTemplateColumn.cs" />
+    <Compile Include="WebControls\ControlHierarchyManager.cs" />
+    <Compile Include="WebControls\IndCheckBox.cs" />
+    <Compile Include="WebControls\IndComboBox.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebControls\IndDatePicker.cs" />
+    <Compile Include="WebControls\IndFormatedLabel.cs" />
+    <Compile Include="WebControls\IndGrid.cs" />
+    <Compile Include="WebControls\IndImageButton.cs" />
+    <Compile Include="WebControls\IndLabel.cs" />
+    <Compile Include="WebControls\IndMenuItem.cs" />
+    <Compile Include="WebControls\IndSelectLabel.cs" />
+    <Compile Include="WebControls\IndTextBox.cs" />
+    <Compile Include="WebControls\IndValidationSummary.cs" />
+    <Compile Include="WebControls\IndYearMonth.cs" />
+    <Compile Include="WebControls\IndYearMonthLabel.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

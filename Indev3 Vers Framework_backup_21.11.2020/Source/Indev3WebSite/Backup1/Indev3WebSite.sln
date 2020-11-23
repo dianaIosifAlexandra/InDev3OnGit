@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "C:\...\Indev3WebSite\", "Indev3WebSite\", "{664D2ED8-10CF-4933-A10B-FF8500D8C6B4}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.VirtualPath = "/Indev3WebSite"
+		Debug.AspNetCompiler.PhysicalPath = "Indev3WebSite\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Indev3WebSite\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Indev3WebSite"
+		Release.AspNetCompiler.PhysicalPath = "Indev3WebSite\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Indev3WebSite\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "1234"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{664D2ED8-10CF-4933-A10B-FF8500D8C6B4}.Debug|.NET.ActiveCfg = Debug|.NET
+		{664D2ED8-10CF-4933-A10B-FF8500D8C6B4}.Debug|.NET.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

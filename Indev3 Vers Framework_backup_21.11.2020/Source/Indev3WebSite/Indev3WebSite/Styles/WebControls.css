@@ -1,0 +1,506 @@
+body
+{
+	background-repeat: no-repeat;
+	background-position: right top;
+	background-image: url(Images/abrt.png);
+	padding-right: 0px;
+	padding-left: 0px;
+	padding-bottom: 0px;
+	margin: 0px;
+	padding-top: 0px;
+	background-color: #6e6e6e;
+}
+
+.IndPagerLinkButton
+{
+  font-family:Tahoma; 
+  font-style: normal; 
+  font-size: 11px; 
+  color:White;
+  text-decoration: none;
+  font-weight:normal;
+}
+
+.IndGridPagerLabel
+{
+  font-family:Tahoma; 
+  font-style: normal; 
+  font-size: 11px; 
+  color:White;
+  text-decoration: none;
+  font-weight:normal;
+  white-space: nowrap;
+}
+
+.IndPagerPageLinkButton
+{
+  font-family : tahoma; 
+  font-style: normal; 
+  font-size: 11px; 
+  color:white;
+  text-decoration: underline; 
+  font-weight:normal;
+}
+.IndPagerPageLabelButton
+{
+  font-family : tahoma; 
+  font-style: normal; 
+  font-size: 11px; 
+  color:white;
+  font-weight:normal;
+}
+
+.IndLabel
+{
+  font-family : tahoma; 
+  font-style: normal; 
+  font-size: 13px; 
+  color:white;
+  font-weight:normal;
+}
+
+.IndLabelDisabled
+{
+  font-family : tahoma; 
+  font-style: normal; 
+  font-size: 13px; 
+  color:Gray;
+  font-weight:normal;
+}
+
+.IndCatLabel
+{
+  font-family : tahoma; 
+  font-style: normal; 
+  font-size: 13px; 
+  color:white;
+  font-weight:normal;
+}
+
+.IndCatLabelDisabled
+{
+  font-family : tahoma; 
+  font-style: normal; 
+  font-size: 13px; 
+  color:Gray;
+  font-weight:normal;
+}
+
+.BudgetEditTextBox
+{
+	font-family : tahoma; 
+	font-style: normal; 
+	font-size: 11px; 
+	width:90px;
+	cursor:text !important;
+}
+
+.txtRefPer
+{
+	font-family : tahoma; 
+	font-style: normal; 
+	font-size: 11px; 
+	width:25px;
+	cursor:text !important;
+}
+
+.txtRef
+{
+	font-family : tahoma; 
+	font-style: normal; 
+	font-size: 11px; 
+	width:66px;
+	cursor:text !important;
+}
+
+.IndValidationSummary 
+{
+	color:yellow;
+	font-family:Tahoma;
+	font-size:11px;
+}
+
+.SaveButton 
+{
+	background:url('../Images/button_save.png') no-repeat;
+	width:46px;
+	height:28px;
+	margin-right:5px;
+	border:0px;
+	cursor:pointer;
+}
+.CloseButton 
+{
+	background:url('../Images/button_close.png') no-repeat;
+	width:46px;
+	height:28px;
+	margin-right:5px;
+	border:0px;
+	cursor:pointer;
+}
+
+.CancelButton 
+{
+	background:url(../Images/button_cancel.png)  no-repeat;
+	width:46px;
+	height:28px;
+	margin-right:5px;
+	border:0px;
+	vertical-align:top;
+	cursor: pointer;
+}
+
+.NextButton 
+{
+	background:url('../Images/button_tab_next.png') no-repeat;
+	width:46px;
+	height:28px;
+	margin-right:5px;
+	border:0px;
+	cursor:pointer;
+}
+
+
+.TitleLabel
+{
+  font-family : tahoma; 
+  font-style: normal; 
+  font-size: 20px; 
+  color:white;
+  font-weight:normal;
+}
+
+.ErrorLabel 
+{
+  font-family: tahoma; 
+  font-style: normal; 
+  font-size: 12px; 
+  color:yellow;
+  font-weight:normal;
+}
+
+.ErrorLabel a
+{
+  font-family: tahoma; 
+  font-style: normal; 
+  font-size: 12px; 
+  color:yellow;
+  font-weight:normal;
+}
+
+.IndImageButton  
+{  
+    cursor: pointer!important;  
+}
+
+.IndImageButtonFooter
+{
+	cursor: pointer;  
+	margin:4px 0px 0px 0px;
+}
+
+.IndLabel1
+{
+	font-family : tahoma; 
+	font-style: normal; 
+	font-size: 13px; 
+	color:white;
+	font-weight:lighter;
+}
+/*Technical Settings style*/
+/*.Panel
+{
+	Border-Style : Outset;
+	Border-Color : white;
+	Border-Width : 1px;
+}*/
+
+.ListBox
+{
+	background-color:#F1F3F8;
+	border: 1px solid grey;
+	_height: 230px;
+	font: 11px Arial,Verdana,sans-serif;
+}
+
+.Warning
+{
+	font-family: Verdana;
+	font-size: 10px; 
+	color: yellow;
+}
+
+.btnSave
+{
+	padding-left:10%;
+}
+
+.txtBoxTechSettings
+{
+	Width:140px;
+}
+
+.drag
+{
+    position:relative;
+}
+
+.button {
+  font-family: verdana; 
+  font-size: 10px; 
+  font-style: normal; 
+  line-height: normal; 
+  font-weight: bold; 
+  font-variant: normal; 
+  color: black; 
+  text-decoration: none; 
+  text-align: center; 
+  border:1px solid;  
+  width: 100px;
+ 
+}
+
+.file
+{
+  font-family: Verdana,Arial, Helvetica, sans-serif;
+  font-size: 10px; 
+  font-style: normal; 
+  line-height: normal; 
+  font-weight: normal; 
+  font-variant: normal; 
+  color: #000000; 
+  text-decoration: none; 
+  text-align: left;
+  padding-left:2px;
+  padding-right:2px;
+  background-color:#F1F3F8;
+  border:1px solid;
+  height:19px;
+}
+
+.RadioButton
+{
+  font-family : tahoma; 
+  font-style: normal; 
+  font-size: 13px; 
+  color:white;
+  font-weight:normal;
+}
+
+.LabelTextBox
+{
+	color: Black; 
+	background-color:White;
+	font-size:13px;
+	font-family:Arial;
+}
+
+.FilterComboBox
+{
+	font-size:11px;
+	font-family:Arial;
+}
+
+.txtOtherCosts
+{
+	font-family : tahoma; 
+	font-style: normal; 
+	font-size: 13px; 
+	width:50px;
+}
+
+.label {font-family: Verdana; color: white; font-size: 10px; font-weight: lighter }
+.breadcrumblabel {color: white; font-family: Tahoma; font-size: 8.5pt; padding-left: 15px }
+
+.RequiredStarLabel
+{
+	color:Yellow;
+}
+
+.IntercoEditTextBox 
+{
+	cursor:text!important;
+	width:60px;	
+}
+
+.TotalsPanel 
+{
+	background-color:#9d9d9d;
+	padding:0px 0px 0px 0px;
+}
+
+.catalogPanel {
+    padding-top: 40px;
+}
+/*#######################*/
+.editableTextBox{cursor:text;color:Red;}
+.browseButton{width:23px;height:23px;border-style: outset;background-color: buttonface; padding-left:3px;}
+.star{font-family:Tahoma;font-size:11px;color:Yellow;}
+.popupPanel{text-align:center;vertical-align:top; height:30px;}
+
+
+
+/* override input cursors with a more specific CSS selector */ 
+
+.Wait INPUT 
+{ 
+    cursor: wait; 
+} 
+
+.Normal INPUT 
+{ 
+    cursor: default; 
+} 
+
+/*This should be applied only on IE8*/
+/*.ie8 input.RadUploadSelectButton*/
+input.RadUploadSelectButton
+{
+    vertical-align:bottom;
+}
+
+.GridElements_IndGenericGrid_Hide
+{
+    border:1px solid red;
+    display:none;
+}
+
+/* Start styles for PeriodMassAttributionDiv.ascx */
+.PeriodMassAttribDiv 
+{
+	font-family:tahoma;
+	display:none; 
+	border:0px 2px 2px 2px; 
+	border-color:#0834DE; 
+	border-style:none solid solid solid;
+    width:320px; 
+    height:255px; 
+    position:absolute; 
+    top:50%; 
+    left:50%; 
+    margin-top:-140px; 
+    margin-left:-160px; 
+    filter:alpha(opacity=100);  
+    background: url('../Images/titlebar.png') repeat-x;
+}
+
+#titleDiv
+{
+	top:0;
+	z-index:100;
+	color:white;
+	text-align:center;
+	padding-top:5px;
+}
+
+.CloseButtonDiv 
+{
+	/*display:block; */
+	visibility:hidden; 
+	width:48px; 
+	height:30px; 
+	right:1; 
+	top:1;
+}
+
+.CloseButton 
+{
+	/*display:block; */
+	visibility:visible;
+	width:23px; 
+	height:23px; 
+	position:absolute;
+	margin-right:0px;
+    right:3px; 
+    top:3px; 
+    border:0px; 
+    cursor:pointer; 
+    filter:alpha(opacity=100);
+    background: #505050 url('../Images/buton_close.png') no-repeat;
+}
+
+.BodyDiv 
+{
+	/*display:block; */
+	width:320px; 
+	height:225px;
+    position:absolute; 
+    margin-top:30px; 
+    margin-left:0px; 
+    left:0; 
+    bottom:0; 
+    right:0; 
+    filter:alpha(opacity=100);
+    background-color:transparent; 
+    background: #6E6E6E url('../Images/back_popup.png') no-repeat right bottom;
+}
+
+.DateLabel 
+{
+	/*display:block; */
+	/*visibility:visible; */
+	width:60px; 
+	height:27px;
+    font-style:normal; 
+    font-size:13px; 
+    color:white;
+    font-weight:normal; 
+    filter:alpha(opacity=100);
+}
+
+.IndValidationSummaryHRMassAttr
+{
+	color:yellow;
+	font-family:Tahoma;
+	font-size:11px;
+	margin-left:50px;
+	margin-top:10px;
+}
+
+.PeriodMassAttributionDiv_SaveButton 
+{
+	/*display:block; 
+	visibility:visible; */
+	width:46px; 
+	height:27px; 
+	border:0;
+    cursor:pointer; 
+    filter:alpha(opacity=100);
+    background: #6E6E6E url('../Images/button_save.png') no-repeat;
+}
+
+.PeriodMassAttributionDiv_CancelButton 
+{
+	/*display:block; 
+	visibility:visible; */
+	width:46px; 
+	height:27px; 
+	border:0;
+    cursor:pointer; 
+    filter:alpha(opacity=100);
+    background: #6E6E6E url('../Images/button_cancel.png') no-repeat;
+}
+/* End styles for PeriodMassAttributionDiv.ascx */
+
+.UnvalidatedBudget
+{
+	padding-left:40px;
+	text-align:left;
+}
+
+.underline
+{
+	text-decoration: underline; 
+}
+
+.bold
+{
+	font-weight:bold;
+}
+
+.divUnvalidate
+{
+	float:left;
+	padding-top:10px;
+	padding-left:20px;
+}

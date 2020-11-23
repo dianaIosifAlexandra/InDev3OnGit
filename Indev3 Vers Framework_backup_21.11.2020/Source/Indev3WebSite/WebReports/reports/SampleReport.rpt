@@ -1,0 +1,230 @@
+[Definition]
+Connection  = "Provider=MSOLAP.2;Data Source=patrocle;Initial Catalog=Indev3"
+Cellset = "SELECT @COLUMNS  ON AXIS(0), @ROWS  ON AXIS(1) FROM [Exchange_Rates]  WHERE (@PERIODS,@Measures) CELL PROPERTIES VALUE, FORMATTED_VALUE, UPDATEABLE, CELL_ORDINAL, FORMAT_STRING, FORE_COLOR, BACK_COLOR, FONT_NAME, FONT_SIZE, FONT_FLAGS"
+
+[Rendering]
+TemplateFiles = ""
+Macro = ""
+Link = ""
+Prefix = ""
+TargetFiles = ""
+Suffix = ""
+NotifySave = False
+
+[Parameters]
+ParametersPrefix = "@"
+ParametersDefault = "@DASHBOARD=0;@Measures=[Measures].[ExchangeRate];@COLUMNS={Hierarchize({Distinct({[CUR_CODE].Members})})};@PERIODS=[PERIODS].[Total].[2008].[Jan 2008];@ROWS={Hierarchize({Distinct({[CUR_NAME].Members})})};@DRILLCOLS=1;@DRILLROWS=1;@DRILLTHROUGH=0;@ATTRIBUTES=0;@COLORCODING=0"
+
+[Notifications]
+Notify = True
+'NotifyFile = ""
+NotifyLanguage = "VBScript"
+
+[Options]
+# Streaming : 0=None ; 1=Enabled
+Streaming = "False"
+
+# IdRHTable, IdCHTable, IdDTTable
+IdRHTable = ""
+IdCHTable = ""
+IdDTTable = ""
+
+# ClientScript : Full path of file containing script to send to browser
+ClientScript = "scripts/wsWbrScript_Client.js"
+
+# FreezeHeaders : 0=None ; 1=Column Header ; 2=Row Header
+FreezeHeaders = "0"
+
+'SkinFile ="styles\wsWebReporter.css"
+EmptyCell = "-"
+NoData = "No Data"
+'Title = "<br>"
+TooManyAxes = "Too many axes"
+ColumnStringDelimiter = " "
+RowStringDelimiter = ", "
+
+# Merge headers : 0=All (one cell) ; 1=GroupBy (identical cell) ; 2=None
+MergeRowHeaders = 2
+MergeColumnHeaders = 2
+
+[WriteBack]
+WriteBackEnabled = "False"
+# WriteBackButton Bit Mask: 0=None ; 1=Save ; 2=Cancel ; 4=Try
+WriteBackButton = "5"
+WriteBackMethod = "USE_EQUAL_ALLOCATION"
+WriteBackFunction = ""
+
+[Security]
+User = ""
+
+[Script]
+Option Explicit
+
+' handle includes to support several supplemental functions
+'#Include file = %wsSmartLinkwebDestination%Scripts\wsWbrScript_Standard.vbs
+'#Include file = %wsSmartLinkwebDestination%Scripts\wsWbrScript_DrillDown.vbs
+'#Include file = %wsSmartLinkwebDestination%Scripts\wsWbrScript_DrillThrough.vbs
+'#Include file = %wsSmartLinkwebDestination%Scripts\wsWbrScript_ColorCoding.vbs
+'#Include file = %wsSmartLinkwebDestination%Scripts\wsWbrScript_Attributes.vbs
+'#Include file = %wsSmartLinkwebDestination%Scripts\wsWbrScript_DashBoard.vbs
+'#Include file = %wsSmartLinkwebDestination%Scripts\wsWbrScript_Merge.vbs
+'#Include file = %wsSmartLinkwebDestination%Scripts\wsWbrScript_Paging.vbs
+'#Include file = %wsSmartLinkwebDestination%Scripts\wsWbrScript_ExStyle.vbs
+
+Sub Notify_WriteBack(ByVal lngXPos, ByVal lngYPos, ByVal strXCoordinate, ByVal strYCoordinate, ByVal strSlicer, ByVal strCube, ByVal strAction, ByRef dblValue, ByRef strMethod, ByRef strFunction, ByRef bolCancel)
+
+End Sub
+
+
+Sub Notify_BeforeTable(ByRef strText, ByRef strClassName)
+
+	mlngCurCol = 0
+	
+	' <!-- ### EXSTYLE : ENHANCED STYLE HEADER ### -->
+	'--- Create dictionaries for ExStyle
+	mlngNbRow = Context("Cellset").axes(1).positions.count
+	mlngNbCol = Context("Cellset").axes(0).positions.count
+	
+	 Call wsCreateStyleDict()
+	' <!-- ### EXSTYLE : ENHANCED STYLE FOOTER ### -->
+
+End Sub
+
+
+Sub Notify_TopLeftCell(ByRef strDisplay, ByRef strClassName, ByRef bytColspan, ByRef bytRowspan, ByRef bolCancel)
+
+End Sub
+
+
+Sub Notify_NewColumnHeader(ByVal lngColIndex, ByVal strMemberProperties, ByRef strTextBefore, ByRef strTextCell, ByRef strClassCell, ByRef strTooltip, ByRef strTextAfter, ByRef bolCancel)
+	
+	Call wsEnableColHeaderStyle(lngColIndex, mlngCurRow, strClassCell)
+	
+	' <!-- ### DRILLCOLUMN HEADER ### -->
+	' handle drilldown & filters on columns
+	Call wsToggleDrillColumns(lngColIndex, strMemberProperties, strTextBefore, strTextCell, strClassCell, strTooltip, strTextAfter, bolCancel)
+	' <!-- ### DRILLCOLUMN FOOTER ### -->
+
+
+	' <!-- ### ADVANCED MERGECOLUMN HEADER ### -->
+	' handle advanced column header merging, usefull when more than 3 dimensions are crossjoined
+	Call wsMergeColumnHeaders(lngColIndex, strMemberProperties, strTextBefore, strTextCell, strClassCell, strTooltip, strTextAfter, bolCancel)
+	' <!-- ### ADVANCED MERGECOLUMN FOOTER ### -->
+
+   ' <!-- ### COLUMNATTRIBUTES HEADER ### -->	
+	 ' handle member properties
+	  Call wsEnableAttributes(1, 0, strTooltip, strMemberProperties, strTooltip, strTextAfter, mlngRowAttributesCnt)
+	' <!-- ### COLUMNATTRIBUTES FOOTER ### -->	
+
+End Sub
+
+
+Sub Notify_NewRowHeader(ByVal lngColIndex, ByVal strMemberProperties, ByRef strTextBefore, ByRef strTextCell, ByRef strClassCell, ByRef strTooltip, ByRef strTextAfter, ByRef bolCancel)
+
+	' <!-- ### EXSTYLE : ENHANCED STYLE HEADER ### -->
+	Call wsEnableRowHeaderStyle(lngColIndex, mlngCurRow, strClassCell)
+	' <!-- ### EXSTYLE : ENHANCED STYLE FOOTER ### -->
+
+	' <!-- ### DRILLROW HEADER ### -->
+	' handle drilldown on rows
+	Call wsToggleDrillRows(lngColIndex, strMemberProperties, strTextBefore, strTextCell, strClassCell, strTooltip, strTextAfter, bolCancel)
+	' <!-- ### DRILLROW FOOTER ### -->
+
+	' <!-- ### ADVANCED MERGEROW HEADER ### -->
+	' handle advanced column header merging, usefull when more than 3 dimensions are crossjoined
+	'Call wsMergeRowHeaders(lngColIndex, strMemberProperties, strTextBefore, strTextCell, strClassCell, strTooltip, strTextAfter, bolCancel)
+	' <!-- ### ADVANCED MERGEROW FOOTER ### -->
+
+	' <!-- ### ROWATTRIBUTES HEADER ### -->
+	' handle member properties
+         Call wsEnableAttributes(1, 1, strTooltip, strMemberProperties, strTooltip, strTextAfter, mlngRowAttributesCnt)
+	' <!-- ### ROWATTRIBUTES FOOTER ### -->
+
+End Sub
+
+
+Sub Notify_NewCell(ByVal lngColIndex, ByVal lngRowIndex, ByVal strMemberProperties, ByVal varValue, ByRef strTextBefore, ByRef strFormattedValue, ByRef strClassCell, ByRef strTooltip, ByRef strTextAfter, ByRef strClassInput, ByRef bolRW, ByRef bolCancel)
+
+    ' handle standard data cells tooltips
+    Call wsEnableCellTooltip(lngColIndex, lngRowIndex, strFormattedValue, strTooltip)
+
+    ' handle standard data cells style
+    IF CONTEXT("@COLORCODING")<> 1 Then Call wsEnableCellColor(lngRowIndex, strClassCell) End if
+    
+  
+   ' <!-- ### EXSTYLE : ENHANCED HEADER ### -->
+  'handle Advanced cell style
+    Call wsEnableCellStyle(lngColIndex, lngRowIndex, strClassCell)
+   ' <!-- ### EXSTYLE : ENHANCED FOOTER ### --> 
+
+    ' <!-- ### DRILLTHROUGH HEADER ### -->	
+    ' handle drill-through on data cells
+    Call wsEnableDrillThrough(lngColIndex, lngRowIndex, strMemberProperties, varValue, strTextBefore, strFormattedValue, strClassCell, strTooltip, strTextAfter, strClassInput, bolRW, bolCancel)
+   ' <!-- ### DRILLTHROUGH FOOTER ### -->
+
+    ' <!-- ### COLORCODING HEADER ### -->	
+    ' handle color coding on data cells
+    Call wsEnableColorCoding(lngColIndex, lngRowIndex, strMemberProperties, varValue, strTextBefore, strFormattedValue, strClassCell, strTooltip, strTextAfter, strClassInput, bolRW, bolCancel)
+    ' <!-- ### COLORCODING FOOTER ### -->	
+
+      ' <!-- ### DASHBOARD HEADER ### -->	
+    Call wsEnableDashboard(lngColIndex, lngRowIndex, strMemberProperties, varValue, strTextBefore, strFormattedValue, strClassCell, strTooltip, strTextAfter, strClassInput, bolRW, bolCancel,0,0,0,1,1,1)
+    ' <!-- ### DASHBOARD FOOTER ### -->	
+	
+End Sub
+
+
+Sub Notify_NewRow(ByVal lngRowIndex, ByRef strTextBefore, ByRef strClassRow, ByRef strTextAfter, ByRef bolCancel)
+
+	
+    ' ### STANDARD SECTION ###
+
+    mlngRowCount = mlngRowCount + 1
+    mlngCurRow = lngRowIndex
+
+End Sub
+
+
+Sub Notify_AfterTable(ByVal strTableId, ByRef strText)
+
+  ' <!-- ### PAGING HEADER ### -->	
+
+	Dim lstrQuery
+	Dim lstrParameters
+
+	lstrQuery = "SELECT @COLUMNS  ON AXIS(0), @ROWS  ON AXIS(1) FROM [Exchange_Rates]  WHERE (@PERIODS,@Measures) CELL PROPERTIES VALUE, FORMATTED_VALUE, UPDATEABLE, CELL_ORDINAL, FORMAT_STRING, FORE_COLOR, BACK_COLOR, FONT_NAME, FONT_SIZE, FONT_FLAGS"
+	lstrParameters = "@DASHBOARD;@Measures;@COLUMNS;@PERIODS;@ROWS;@DRILLTHROUGH;@ATTRIBUTES;@COLORCODING"
+
+	Call wsAddPagingLimit(strText, lstrParameters, lstrQuery)
+
+  ' <!-- ### PAGING FOOTER ### -->	
+
+End Sub
+
+
+Sub Notify_Save(ByRef strTemplateFiles, ByRef strMacro, ByRef strLink, ByRef strPrefix, ByRef strTargetFiles, ByRef strSuffix)
+
+End Sub
+
+[SKIN]
+
+' <!-- ### FREEZE ROW HEADER ### -->
+.owdivdttable
+{
+    FONT-SIZE: 10px;
+    WIDTH: 200px;
+    OVERFLOW: auto;
+    TEXT-ALIGN: center
+}
+' <!-- ### FREEZE ROW FOOTER ### -->
+
+' <!-- ### FREEZE COLUMN HEADER ### -->
+.owdivdttable
+{
+    FONT-SIZE: 10px;
+    HEIGHT: 58%;
+    OVERFLOW: auto;
+    TEXT-ALIGN: center
+}
+' <!-- ### FREEZE COLUMN FOOTER ### -->
+

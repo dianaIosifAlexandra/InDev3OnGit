@@ -1,0 +1,2 @@
+INSERT INTO OLAP_SCALINGS (Id, Name, Formula) VALUES (1, 'MTD', NULL)
+INSERT INTO OLAP_SCALINGS (Id, Name, Formula) VALUES (2, 'YTD', 'SUM(YTD(),(Scaling.[MTD]))')

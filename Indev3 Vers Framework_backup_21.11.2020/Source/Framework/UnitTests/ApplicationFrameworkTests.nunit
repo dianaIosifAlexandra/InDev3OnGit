@@ -1,0 +1,7 @@
+<NUnitProject>
+  <Settings activeconfig="Debug" />
+  <Config name="Debug" appbase="..\..\Bin\UnitTests">
+    <assembly path="Inergy.Indev3.ApplicationFrameworkTests.dll" />
+  </Config>
+  <Config name="Release" binpathtype="Auto" />
+</NUnitProject>

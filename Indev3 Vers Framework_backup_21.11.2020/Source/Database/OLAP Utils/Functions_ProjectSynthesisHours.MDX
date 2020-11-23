@@ -1,0 +1,6 @@
+"WITH SET cols AS '{CAT_FCT.[Actual -1], CAT_FCT.[Reforecast vs. Actual -1], CAT_FCT.[Reforecast], CAT_FCT.[Reforecast vs. Annual Budget], CAT_FCT.[Annual Budget]}'
+          SET rows AS '{PROGRAM_LIST.Members}'
+SELECT cols ON COLUMNS,
+             NON EMPTY rows ON ROWS
+FROM Functions
+WHERE (Measures.HoursQty, PERIODS.DefaultMember, FCT_CC.DefaultMember, SCALING.DefaultMember)"

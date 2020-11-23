@@ -1,0 +1,6 @@
+"WITH SET cols AS '{Measures.HoursQty,Measures.Averate, Measures.HoursVal, Measures.Cost, Measures.Gross, Measures.Sales, Measures.Net, Measures.HoursQty}'
+          SET rows AS 'DUM_CC.TCName.Members'
+SELECT cols ON COLUMNS,
+             NON EMPTY rows ON ROWS
+FROM Dummies
+WHERE (CAT_FCT.DefaultMember, PERIODS.DefaultMember, SCALING.DefaultMember, UNIT.DefaultMember)"

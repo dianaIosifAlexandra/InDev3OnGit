@@ -1,0 +1,35 @@
+C:\INDev3\trunk\Source\Bin\Inergy.Indev3.Entities.dll
+C:\INDev3\trunk\Source\Bin\Inergy.Indev3.Entities.pdb
+C:\INDev3\trunk\Source\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
+C:\INDev3\trunk\Source\Entities\obj\Debug\Inergy.Indev3.Entities.dll
+C:\INDev3\trunk\Source\Entities\obj\Debug\Inergy.Indev3.Entities.pdb
+F:\INDev3\trunk\Source\Bin\Inergy.Indev3.Entities.dll
+F:\INDev3\trunk\Source\Bin\Inergy.Indev3.Entities.pdb
+F:\INDev3\trunk\Source\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
+F:\INDev3\trunk\Source\Entities\obj\Debug\Inergy.Indev3.Entities.dll
+F:\INDev3\trunk\Source\Entities\obj\Debug\Inergy.Indev3.Entities.pdb
+F:\Indev3_2\trunk\Source\Bin\Inergy.Indev3.Entities.dll
+F:\Indev3_2\trunk\Source\Bin\Inergy.Indev3.Entities.pdb
+F:\Indev3_2\trunk\Source\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
+F:\Indev3_2\trunk\Source\Entities\obj\Debug\Inergy.Indev3.Entities.dll
+F:\Indev3_2\trunk\Source\Entities\obj\Debug\Inergy.Indev3.Entities.pdb
+D:\Indev3\trunk\Source\Bin\Inergy.Indev3.Entities.dll
+D:\Indev3\trunk\Source\Bin\Inergy.Indev3.Entities.pdb
+D:\Indev3\trunk\Source\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
+D:\Indev3\trunk\Source\Entities\obj\Debug\Inergy.Indev3.Entities.dll
+D:\Indev3\trunk\Source\Entities\obj\Debug\Inergy.Indev3.Entities.pdb
+D:\Indev3 svn\trunk\Source\Bin\Inergy.Indev3.Entities.dll
+D:\Indev3 svn\trunk\Source\Bin\Inergy.Indev3.Entities.pdb
+D:\Indev3 svn\trunk\Source\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
+D:\Indev3 svn\trunk\Source\Entities\obj\Debug\Inergy.Indev3.Entities.dll
+D:\Indev3 svn\trunk\Source\Entities\obj\Debug\Inergy.Indev3.Entities.pdb
+D:\Indev3 Vers Framework\Source\Bin\Inergy.Indev3.Entities.dll
+D:\Indev3 Vers Framework\Source\Bin\Inergy.Indev3.Entities.pdb
+D:\Indev3 Vers Framework\Source\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
+D:\Indev3 Vers Framework\Source\Entities\obj\Debug\Inergy.Indev3.Entities.dll
+D:\Indev3 Vers Framework\Source\Entities\obj\Debug\Inergy.Indev3.Entities.pdb
+D:\Projects\Indev3 Vers Framework\Source\Bin\Inergy.Indev3.Entities.dll
+D:\Projects\Indev3 Vers Framework\Source\Bin\Inergy.Indev3.Entities.pdb
+D:\Projects\Indev3 Vers Framework\Source\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
+D:\Projects\Indev3 Vers Framework\Source\Entities\obj\Debug\Inergy.Indev3.Entities.dll
+D:\Projects\Indev3 Vers Framework\Source\Entities\obj\Debug\Inergy.Indev3.Entities.pdb

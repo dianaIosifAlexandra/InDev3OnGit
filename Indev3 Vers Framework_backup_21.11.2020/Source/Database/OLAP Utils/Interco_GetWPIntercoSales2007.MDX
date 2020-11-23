@@ -1,0 +1,5 @@
+"--gets reforecast sales
+SELECT NON EMPTY {[INTERCO_FROM].[WorkPackageName].Members} ON COLUMNS,
+             NON EMPTY CROSSJOIN ({[PERIODS].[Year].[2007].Children}, {[INTERCO_TO].[Work Package Name].Members}) ON ROWS
+FROM Interco
+WHERE ([Measures].[Sales], [CAT_INTERCO].[Total].[Reforecast])"

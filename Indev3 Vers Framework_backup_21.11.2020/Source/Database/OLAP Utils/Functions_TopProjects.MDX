@@ -1,0 +1,6 @@
+"WITH SET cols AS 'FCT_CC.FunctionName.Members'
+          SET rows AS 'PROGRAM_LIST.ProjectName.Members'
+SELECT cols ON COLUMNS,
+             NON EMPTY ORDER(rows, Measures.HoursQty, BDESC) ON ROWS
+FROM Functions
+WHERE (Measures.HoursQty, CAT_FCT.DefaultMember, PERIODS.DefaultMember, SCALING.DefaultMember)"

@@ -1,0 +1,8 @@
+"--Get exchange rates for default selected member in PERIODS
+WITH SET CurName as '{[CUR_NAME].[CurrencyName].Members}'
+          SET CurCode as '{[CUR_Code].[CurrencyCode].Members}' 
+SELECT  CurCode ON COLUMNS,
+              CurName ON ROWS
+FROM Exchange_Rates
+WHERE  (Measures.ExchangeRate, PERIODS.DefaultMember)
+"

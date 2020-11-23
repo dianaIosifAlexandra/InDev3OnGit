@@ -1,0 +1,131 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0AE67D74-10E6-4AEF-8ACA-EE0CD0306C24}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Inergy.Indev3.DataAccessTests</RootNamespace>
+    <AssemblyName>Inergy.Indev3.DataAccessTests</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <PublishUrl>http://localhost/Inergy.Indev3.DataAccessTests/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Bin\UnitTests\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Inergy.Indev3.ApplicationFramework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Bin\Inergy.Indev3.ApplicationFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Inergy.Indev3.BusinessLogic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Bin\Inergy.Indev3.BusinessLogic.dll</HintPath>
+    </Reference>
+    <Reference Include="Inergy.Indev3.DataAccess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Bin\Inergy.Indev3.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Inergy.Indev3.Entities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Bin\Inergy.Indev3.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.4.6.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Authorization\CurrentUserTest.cs" />
+    <Compile Include="BaseTest.cs" />
+    <Compile Include="Budget\CurrentProjectTest.cs" />
+    <Compile Include="Budget\InitialBudgetTest.cs" />
+    <Compile Include="Budget\ProjectCoreTeamMemberTest.cs" />
+    <Compile Include="Budget\ProjectFunctionTest.cs" />
+    <Compile Include="Budget\RevisedBudgetTest.cs" />
+    <Compile Include="Budget\TimingAndIntercoTest.cs" />
+    <Compile Include="BusinessObjectInitializer.cs" />
+    <Compile Include="Catalogs\AssociateTest.cs" />
+    <Compile Include="Catalogs\CostCenterTest.cs" />
+    <Compile Include="Catalogs\CostIncomeTypeTest.cs" />
+    <Compile Include="Catalogs\CountryTest.cs" />
+    <Compile Include="Catalogs\CurrencyTest.cs" />
+    <Compile Include="Catalogs\DepartmentTest.cs" />
+    <Compile Include="Catalogs\ExchangeRateTest.cs" />
+    <Compile Include="Catalogs\FunctionTest.cs" />
+    <Compile Include="Catalogs\GlAccountTest.cs" />
+    <Compile Include="Catalogs\HourlyRatesTest.cs" />
+    <Compile Include="Catalogs\InergyLocationTest.cs" />
+    <Compile Include="Catalogs\OwnerTest.cs" />
+    <Compile Include="Catalogs\OwnerTypeTest.cs" />
+    <Compile Include="Catalogs\ProgramTest.cs" />
+    <Compile Include="Catalogs\ProjectPhaseTest.cs" />
+    <Compile Include="Catalogs\ProjectTest.cs" />
+    <Compile Include="Catalogs\ProjectTypeTest.cs" />
+    <Compile Include="Catalogs\RegionTest.cs" />
+    <Compile Include="Catalogs\WorkPackagesTest.cs" />
+    <Compile Include="DATestUtils.cs" />
+    <Compile Include="DBStoredProcedureTest.cs" />
+    <Compile Include="InvalidColumnException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

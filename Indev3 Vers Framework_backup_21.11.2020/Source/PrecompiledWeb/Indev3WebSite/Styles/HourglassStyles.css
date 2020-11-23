@@ -1,0 +1,28 @@
+﻿.Normal 
+{ 
+} 
+.Wait 
+{ 
+} 
+/* override grid cursors with a more specific CSS selector */ 
+.Normal TABLE 
+{ 
+}  
+.Wait TABLE 
+{ 
+    cursor: wait; 
+} 
+.Normal Input 
+{ 
+} 
+.Wait INPUT 
+{ 
+    cursor: wait; 
+} 
+.Normal a 
+{ 
+} 
+.Wait a 
+{ 
+    cursor: wait; 
+} 

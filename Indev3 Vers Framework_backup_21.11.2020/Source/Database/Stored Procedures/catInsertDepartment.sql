@@ -1,0 +1,55 @@
+--Drops the Procedure catInsertDepartment if it exists
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE ID = object_id(N'[dbo].[catInsertDepartment]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+DROP PROCEDURE catInsertDepartment
+GO
+CREATE PROCEDURE catInsertDepartment
+	@IdFunction	INT,		--The Id of the function that coresponds to this Department
+	@Name		VARCHAR(50),	--The Name of the Department you want to Insert
+	@Rank		INT
+	
+AS
+DECLARE @Id			INT,
+	@ValidateLogicKey	BIT,
+	@ErrorMessage		VARCHAR(200),
+	@LogicalKey		VARCHAR(20)
+
+	DECLARE @RetVal INT
+	
+	--Function catalogue does not have a UI so no verifications for Function should be done
+	
+	SET @LogicalKey = 'Name'
+
+	IF EXISTS( SELECT *
+	FROM DEPARTMENTS AS D(TABLOCKX)
+	WHERE 	D.[Name] = @Name) 
+	SET @ValidateLogicKey = 1
+	
+	IF (@ValidateLogicKey = 1)
+	BEGIN
+		EXEC   auxSelectErrorMessage_1 @Code = 'DUPLICATE_LOGIC_KEY_1',@IdLanguage = 1,@Parameter1 = @LogicalKey, @Message = @ErrorMessage OUTPUT
+		RAISERROR(@ErrorMessage,16,1)
+		RETURN -1
+	END
+
+	IF(@IdFunction IS NULL OR 
+	   @Name IS NULL)
+	BEGIN 
+		EXEC auxSelectErrorMessage_0 @Code = 'VERIFY_MANDATORY_COLUMN_0',@IdLanguage = 1, @Message = @ErrorMessage OUTPUT
+		RAISERROR(@ErrorMessage,16,1)
+		RETURN -2		
+	END
+
+	SELECT @Id = ISNULL(MAX(D.[Id]), 0) + 1
+	FROM DEPARTMENTS AS D (TABLOCKX)
+	
+	exec @RetVal = catUpdateCatalogRank 'DEPARTMENTS', @Rank,1,NULL
+
+	IF (@@ERROR <> 0 OR @RetVal < 0)
+		return -3
+
+	INSERT INTO DEPARTMENTS ([Id],IdFunction,[Name], [Rank])
+	VALUES		        (@Id,@IdFunction,@Name,  @Rank)
+	
+	RETURN @Id
+GO
+

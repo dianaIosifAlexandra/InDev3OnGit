@@ -1,0 +1,378 @@
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[FK_ACTUAL_DATA_DETAIL_COSTS_ACTUAL_DATA_DETAILS]') and OBJECTPROPERTY(id, N'IsForeignKey') = 1)
+ALTER TABLE [dbo].[ACTUAL_DATA_DETAIL_COSTS] DROP CONSTRAINT FK_ACTUAL_DATA_DETAIL_COSTS_ACTUAL_DATA_DETAILS
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[ACTUAL_DATA_DETAIL_COSTS]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [dbo].[ACTUAL_DATA_DETAIL_COSTS]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[ACTUAL_DATA_DETAILS]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [dbo].[ACTUAL_DATA_DETAILS]
+GO
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[ACTUAL_DATA_DETAILS_COSTS]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [dbo].[ACTUAL_DATA_DETAILS_COSTS]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[ACTUAL_DATA_DETAILS_HOURS]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [dbo].[ACTUAL_DATA_DETAILS_HOURS]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[ACTUAL_DATA_DETAILS_SALES]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [dbo].[ACTUAL_DATA_DETAILS_SALES]
+GO
+
+CREATE TABLE [dbo].[ACTUAL_DATA_DETAILS_COSTS] (
+	[IdProject] [int] NOT NULL ,
+	[IdPhase] [int] NOT NULL ,
+	[IdWorkPackage] [int] NOT NULL ,
+	[IdCostCenter] [int] NOT NULL ,
+	[YearMonth] [int] NOT NULL ,
+	[IdAssociate] [int] NOT NULL ,
+	[IdCountry] [int] NOT NULL ,
+	[IdAccount] [int] NOT NULL ,
+	[IdCostType] [int] NOT NULL ,
+	[CostVal] [decimal](18, 2) NOT NULL ,
+	[DateImport] [smalldatetime] NOT NULL ,
+	[IdImport] [int] NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[ACTUAL_DATA_DETAILS_HOURS] (
+	[IdProject] [int] NOT NULL ,
+	[IdPhase] [int] NOT NULL ,
+	[IdWorkPackage] [int] NOT NULL ,
+	[IdCostCenter] [int] NOT NULL ,
+	[YearMonth] [int] NOT NULL ,
+	[IdAssociate] [int] NOT NULL ,
+	[IdCountry] [int] NOT NULL ,
+	[IdAccount] [int] NOT NULL ,
+	[HoursQty] [int] NOT NULL ,
+	[HoursVal] [decimal](18, 2) NOT NULL ,
+	[DateImport] [smalldatetime] NOT NULL ,
+	[IdImport] [int] NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[ACTUAL_DATA_DETAILS_SALES] (
+	[IdProject] [int] NOT NULL ,
+	[IdPhase] [int] NOT NULL ,
+	[IdWorkPackage] [int] NOT NULL ,
+	[IdCostCenter] [int] NOT NULL ,
+	[YearMonth] [int] NOT NULL ,
+	[IdAssociate] [int] NOT NULL ,
+	[IdCountry] [int] NOT NULL ,
+	[IdAccount] [int] NOT NULL ,
+	[SalesVal] [decimal](18, 2) NOT NULL ,
+	[DateImport] [smalldatetime] NOT NULL ,
+	[IdImport] [int] NOT NULL 
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[ACTUAL_DATA_DETAILS_COSTS] WITH NOCHECK ADD 
+	CONSTRAINT [PK_ACTUAL_DATA_DETAIL_COSTS] PRIMARY KEY  CLUSTERED 
+	(
+		[IdProject],
+		[IdPhase],
+		[IdWorkPackage],
+		[IdCostCenter],
+		[YearMonth],
+		[IdAssociate],
+		[IdCountry],
+		[IdAccount]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [dbo].[ACTUAL_DATA_DETAILS_HOURS] WITH NOCHECK ADD 
+	CONSTRAINT [PK_ACTUAL_DATA_DETAILS] PRIMARY KEY  CLUSTERED 
+	(
+		[IdProject],
+		[IdPhase],
+		[IdWorkPackage],
+		[IdCostCenter],
+		[YearMonth],
+		[IdAssociate],
+		[IdCountry],
+		[IdAccount]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [dbo].[ACTUAL_DATA_DETAILS_SALES] WITH NOCHECK ADD 
+	CONSTRAINT [PK_ACTUAL_DATA_DETAIL_SALES] PRIMARY KEY  CLUSTERED 
+	(
+		[IdProject],
+		[IdPhase],
+		[IdWorkPackage],
+		[IdCostCenter],
+		[YearMonth],
+		[IdAssociate],
+		[IdCountry],
+		[IdAccount]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [dbo].[ACTUAL_DATA_DETAILS_COSTS] ADD 
+	CONSTRAINT [FK_ACTUAL_DATA_DETAIL_COSTS_ACTUAL_DATA] FOREIGN KEY 
+	(
+		[IdProject]
+	) REFERENCES [dbo].[ACTUAL_DATA] (
+		[IdProject]
+	),
+	CONSTRAINT [FK_ACTUAL_DATA_DETAIL_COSTS_ASSOCIATES] FOREIGN KEY 
+	(
+		[IdAssociate]
+	) REFERENCES [dbo].[ASSOCIATES] (
+		[Id]
+	),
+	CONSTRAINT [FK_ACTUAL_DATA_DETAIL_COSTS_BUDGET_COST_TYPES] FOREIGN KEY 
+	(
+		[IdCostType]
+	) REFERENCES [dbo].[BUDGET_COST_TYPES] (
+		[Id]
+	),
+	CONSTRAINT [FK_ACTUAL_DATA_DETAIL_COSTS_COST_CENTERS] FOREIGN KEY 
+	(
+		[IdCostCenter]
+	) REFERENCES [dbo].[COST_CENTERS] (
+		[Id]
+	),
+	CONSTRAINT [FK_ACTUAL_DATA_DETAIL_COSTS_GL_ACCOUNTS] FOREIGN KEY 
+	(
+		[IdCountry],
+		[IdAccount]
+	) REFERENCES [dbo].[GL_ACCOUNTS] (
+		[IdCountry],
+		[Id]
+	),
+	CONSTRAINT [FK_ACTUAL_DATA_DETAIL_COSTS_IMPORTS] FOREIGN KEY 
+	(
+		[IdImport]
+	) REFERENCES [dbo].[IMPORTS] (
+		[IdImport]
+	),
+	CONSTRAINT [FK_ACTUAL_DATA_DETAIL_COSTS_WORK_PACKAGES] FOREIGN KEY 
+	(
+		[IdProject],
+		[IdPhase],
+		[IdWorkPackage]
+	) REFERENCES [dbo].[WORK_PACKAGES] (
+		[IdProject],
+		[IdPhase],
+		[Id]
+	)
+GO
+
+ALTER TABLE [dbo].[ACTUAL_DATA_DETAILS_HOURS] ADD 
+	CONSTRAINT [FK_ACTUAL_DATA_DETAIL_HOURS_IMPORTS] FOREIGN KEY 
+	(
+		[IdImport]
+	) REFERENCES [dbo].[IMPORTS] (
+		[IdImport]
+	),
+	CONSTRAINT [FK_ACTUAL_DATA_DETAILS_ACTUAL_DATA] FOREIGN KEY 
+	(
+		[IdProject]
+	) REFERENCES [dbo].[ACTUAL_DATA] (
+		[IdProject]
+	),
+	CONSTRAINT [FK_ACTUAL_DATA_DETAILS_ASSOCIATES] FOREIGN KEY 
+	(
+		[IdAssociate]
+	) REFERENCES [dbo].[ASSOCIATES] (
+		[Id]
+	),
+	CONSTRAINT [FK_ACTUAL_DATA_DETAILS_COST_CENTERS] FOREIGN KEY 
+	(
+		[IdCostCenter]
+	) REFERENCES [dbo].[COST_CENTERS] (
+		[Id]
+	),
+	CONSTRAINT [FK_ACTUAL_DATA_DETAILS_GL_ACCOUNTS] FOREIGN KEY 
+	(
+		[IdCountry],
+		[IdAccount]
+	) REFERENCES [dbo].[GL_ACCOUNTS] (
+		[IdCountry],
+		[Id]
+	),
+	CONSTRAINT [FK_ACTUAL_DATA_DETAILS_WORK_PACKAGES] FOREIGN KEY 
+	(
+		[IdProject],
+		[IdPhase],
+		[IdWorkPackage]
+	) REFERENCES [dbo].[WORK_PACKAGES] (
+		[IdProject],
+		[IdPhase],
+		[Id]
+	)
+GO
+
+ALTER TABLE [dbo].[ACTUAL_DATA_DETAILS_SALES] ADD 
+	CONSTRAINT [FK_ACTUAL_DATA_DETAIL_SALES_ACTUAL_DATA] FOREIGN KEY 
+	(
+		[IdProject]
+	) REFERENCES [dbo].[ACTUAL_DATA] (
+		[IdProject]
+	),
+	CONSTRAINT [FK_ACTUAL_DATA_DETAIL_SALES_ASSOCIATES] FOREIGN KEY 
+	(
+		[IdAssociate]
+	) REFERENCES [dbo].[ASSOCIATES] (
+		[Id]
+	),
+	CONSTRAINT [FK_ACTUAL_DATA_DETAIL_SALES_COST_CENTERS] FOREIGN KEY 
+	(
+		[IdCostCenter]
+	) REFERENCES [dbo].[COST_CENTERS] (
+		[Id]
+	),
+	CONSTRAINT [FK_ACTUAL_DATA_DETAIL_SALES_GL_ACCOUNTS1] FOREIGN KEY 
+	(
+		[IdCountry],
+		[IdAccount]
+	) REFERENCES [dbo].[GL_ACCOUNTS] (
+		[IdCountry],
+		[Id]
+	),
+	CONSTRAINT [FK_ACTUAL_DATA_DETAIL_SALES_IMPORTS] FOREIGN KEY 
+	(
+		[IdImport]
+	) REFERENCES [dbo].[IMPORTS] (
+		[IdImport]
+	),
+	CONSTRAINT [FK_ACTUAL_DATA_DETAIL_SALES_WORK_PACKAGES] FOREIGN KEY 
+	(
+		[IdProject],
+		[IdPhase],
+		[IdWorkPackage]
+	) REFERENCES [dbo].[WORK_PACKAGES] (
+		[IdProject],
+		[IdPhase],
+		[Id]
+	)
+GO
+
+BEGIN TRANSACTION
+ALTER TABLE dbo.IMPORTS
+	DROP CONSTRAINT FK_IMPORTS_ASSOCIATES
+GO
+COMMIT
+BEGIN TRANSACTION
+CREATE TABLE dbo.Tmp_IMPORTS
+	(
+	IdImport int NOT NULL,
+	ImportDate datetime NOT NULL,
+	FileName varchar(50) NOT NULL,
+	IdAssociate int NOT NULL,
+	ExclusionCostCenterRowsNo int NOT NULL,
+	ExclusionGlAccountsRowsNo int NOT NULL
+	)  ON [PRIMARY]
+GO
+IF EXISTS(SELECT * FROM dbo.IMPORTS)
+	 EXEC('INSERT INTO dbo.Tmp_IMPORTS (IdImport, ImportDate, FileName, IdAssociate, ExclusionCostCenterRowsNo, ExclusionGlAccountsRowsNo)
+		SELECT IdImport, ImportDate, FileName, IdAssociate, ExclusionCostCenterRowsNo, ExclusionGlAccountsRowsNo FROM dbo.IMPORTS (HOLDLOCK TABLOCKX)')
+GO
+ALTER TABLE dbo.ACTUAL_DATA_DETAILS_COSTS
+	DROP CONSTRAINT FK_ACTUAL_DATA_DETAIL_COSTS_IMPORTS
+GO
+ALTER TABLE dbo.ACTUAL_DATA_DETAILS_HOURS
+	DROP CONSTRAINT FK_ACTUAL_DATA_DETAIL_HOURS_IMPORTS
+GO
+ALTER TABLE dbo.ACTUAL_DATA_DETAILS_SALES
+	DROP CONSTRAINT FK_ACTUAL_DATA_DETAIL_SALES_IMPORTS
+GO
+ALTER TABLE dbo.IMPORT_DETAILS
+	DROP CONSTRAINT FK_IMPORT_DETAILS_IMPORTS
+GO
+ALTER TABLE dbo.IMPORT_LOGS
+	DROP CONSTRAINT FK_IMPORT_LOGS_IMPORTS
+GO
+DROP TABLE dbo.IMPORTS
+GO
+EXECUTE sp_rename N'dbo.Tmp_IMPORTS', N'IMPORTS', 'OBJECT'
+GO
+ALTER TABLE dbo.IMPORTS ADD CONSTRAINT
+	PK_IMPORT_MASTER PRIMARY KEY CLUSTERED 
+	(
+	IdImport
+	) WITH FILLFACTOR = 90 ON [PRIMARY]
+
+GO
+ALTER TABLE dbo.IMPORTS WITH NOCHECK ADD CONSTRAINT
+	FK_IMPORTS_ASSOCIATES FOREIGN KEY
+	(
+	IdAssociate
+	) REFERENCES dbo.ASSOCIATES
+	(
+	Id
+	)
+GO
+COMMIT
+BEGIN TRANSACTION
+ALTER TABLE dbo.IMPORT_LOGS WITH NOCHECK ADD CONSTRAINT
+	FK_IMPORT_LOGS_IMPORTS FOREIGN KEY
+	(
+	IdImport
+	) REFERENCES dbo.IMPORTS
+	(
+	IdImport
+	)
+GO
+COMMIT
+BEGIN TRANSACTION
+ALTER TABLE dbo.IMPORT_DETAILS WITH NOCHECK ADD CONSTRAINT
+	FK_IMPORT_DETAILS_IMPORTS FOREIGN KEY
+	(
+	IdImport
+	) REFERENCES dbo.IMPORTS
+	(
+	IdImport
+	)
+GO
+COMMIT
+BEGIN TRANSACTION
+ALTER TABLE dbo.ACTUAL_DATA_DETAILS_SALES WITH NOCHECK ADD CONSTRAINT
+	FK_ACTUAL_DATA_DETAIL_SALES_IMPORTS FOREIGN KEY
+	(
+	IdImport
+	) REFERENCES dbo.IMPORTS
+	(
+	IdImport
+	)
+GO
+COMMIT
+BEGIN TRANSACTION
+ALTER TABLE dbo.ACTUAL_DATA_DETAILS_HOURS WITH NOCHECK ADD CONSTRAINT
+	FK_ACTUAL_DATA_DETAIL_HOURS_IMPORTS FOREIGN KEY
+	(
+	IdImport
+	) REFERENCES dbo.IMPORTS
+	(
+	IdImport
+	)
+GO
+COMMIT
+BEGIN TRANSACTION
+ALTER TABLE dbo.ACTUAL_DATA_DETAILS_COSTS WITH NOCHECK ADD CONSTRAINT
+	FK_ACTUAL_DATA_DETAIL_COSTS_IMPORTS FOREIGN KEY
+	(
+	IdImport
+	) REFERENCES dbo.IMPORTS
+	(
+	IdImport
+	)
+GO
+COMMIT
+
+
+BEGIN TRANSACTION
+ALTER TABLE dbo.CURRENCIES ADD CONSTRAINT
+	IX_CURRENCIES UNIQUE NONCLUSTERED 
+	(
+	Code
+	) ON [PRIMARY]
+
+GO
+COMMIT
+

@@ -1,0 +1,115 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AF86647E-BB00-47C5-BC63-F3BF2E3D3AD7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Inergy.Indev3.Entities</RootNamespace>
+    <AssemblyName>Inergy.Indev3.Entities</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Inergy.Indev3.ApplicationFramework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Bin\Inergy.Indev3.ApplicationFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnnualBudget\IAnnualImports.cs" />
+    <Compile Include="AnnualBudget\IAnnualUpload.cs" />
+    <Compile Include="AnnualBudget\IAnnualDataLogs.cs" />
+    <Compile Include="AnnualBudget\IAnnualDataStatus.cs" />
+    <Compile Include="AnnualBudget\IAnnualImportDetails.cs" />
+    <Compile Include="AnnualBudget\IAnnualDownload.cs" />
+    <Compile Include="Budget\IFollowUpCompletionBudget.cs" />
+    <Compile Include="Budget\IFollowUpRevisedBudget.cs" />
+    <Compile Include="Budget\IProjectCopyCoreTeam.cs" />
+    <Compile Include="Budget\IProjectSelectorFilter.cs" />
+    <Compile Include="Budget\IReforecastBudget.cs" />
+    <Compile Include="Budget\IRevisedBudgetOtherCosts.cs" />
+    <Compile Include="Budget\ICurrencyConverter.cs" />
+    <Compile Include="Budget\IExchangeRateReader.cs" />
+    <Compile Include="Budget\IBudget.cs" />
+    <Compile Include="Budget\IConverter.cs" />
+    <Compile Include="Budget\ICostCenterFilter.cs" />
+    <Compile Include="Budget\ICurrentProject.cs" />
+    <Compile Include="Budget\IFollowUpInitialBudget.cs" />
+    <Compile Include="Budget\IInitialBudget.cs" />
+    <Compile Include="Budget\IInitialBudgetOtherCosts.cs" />
+    <Compile Include="Budget\IProjectCoreTeamMember.cs" />
+    <Compile Include="Budget\IProjectFunction.cs" />
+    <Compile Include="Budget\IRevisedBudget.cs" />
+    <Compile Include="Budget\ITimingAndInterco.cs" />
+    <Compile Include="Budget\IWPPreselection.cs" />
+    <Compile Include="Catalogues\IAssociate.cs" />
+    <Compile Include="Catalogues\ICostCenter.cs" />
+    <Compile Include="Catalogues\ICostIncomeType.cs" />
+    <Compile Include="Catalogues\ICountry.cs" />
+    <Compile Include="Catalogues\ICurrency.cs" />
+    <Compile Include="Catalogues\IDepartment.cs" />
+    <Compile Include="Catalogues\IExchangeRate.cs" />
+    <Compile Include="Catalogues\IFunction.cs" />
+    <Compile Include="Catalogues\IGlAccount.cs" />
+    <Compile Include="Catalogues\IHourlyRate.cs" />
+    <Compile Include="Catalogues\IInergyCountry.cs" />
+    <Compile Include="Catalogues\IInergyLocation.cs" />
+    <Compile Include="Catalogues\IOwner.cs" />
+    <Compile Include="Catalogues\IOwnerType.cs" />
+    <Compile Include="Catalogues\IProgram.cs" />
+    <Compile Include="Catalogues\IProject.cs" />
+    <Compile Include="Catalogues\IProjectPhase.cs" />
+    <Compile Include="Catalogues\IProjectType.cs" />
+    <Compile Include="Catalogues\IRegion.cs" />
+    <Compile Include="Catalogues\IWorkPackage.cs" />
+    <Compile Include="Catalogues\IWorkPackageTemplate.cs" />
+    <Compile Include="Extract\IExtract.cs" />
+    <Compile Include="Extract\IExtractByFunctionFilter.cs" />
+    <Compile Include="Financial\IExchangeRates.cs" />
+    <Compile Include="IGenericEntity.cs" />
+    <Compile Include="InitialBudget\IUploadInitialBudget.cs" />
+    <Compile Include="Olap\IOlapHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Upload\IDataLogs.cs" />
+    <Compile Include="Upload\IImportDetails.cs" />
+    <Compile Include="Upload\IDataStatus.cs" />
+    <Compile Include="Upload\IImportDetailsKeyRowsMissing.cs" />
+    <Compile Include="Upload\IImports.cs" />
+    <Compile Include="Upload\IImportSources.cs" />
+    <Compile Include="UserSettings\IUserSettings.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

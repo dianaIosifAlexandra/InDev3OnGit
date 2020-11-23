@@ -1,0 +1,113 @@
+begin tran
+
+truncate table WORK_PACKAGES_TEMPLATE
+insert into WORK_PACKAGES_TEMPLATE
+(IdPhase, Id, Code, Name, [Rank], IsActive, LastUpdate, LastUserUpdate)
+select 2,1,102,'QUOTATION',1,1,'04 Nov 2009 14:05:29:440',1169
+union
+select 3,1,201,'MANAGEMENT OF',2,1,'04 Nov 2009 16:05:00:900',1169
+union
+select 3,2,202,'NEGOTIATION OF',3,1,'04 Nov 2009 16:05:28:570',1169
+union
+select 3,3,221,'DESIGN OF CONCEPT',4,1,'04 Nov 2009 16:06:00:947',1169
+union
+select 3,4,222,'BUILD & VALIDATION',5,1,'29 Mar 2010 10:01:53:630',1169
+union
+select 3,5,231,'PROCESS & LOGISTIC',6,1,'04 Nov 2009 16:08:29:430',1169
+union
+select 3,6,211,'QUALITY ASSURANCE',7,1,'04 Nov 2009 16:09:13:150',1169
+union
+select 3,7,241,'PRE-SOURCING',8,1,'04 Nov 2009 16:10:28:290',1169
+union
+select 3,8,251,'CTR SYST DEV',9,1,'12 Nov 2012 12:16:28:040',2012
+union
+select 3,9,252,'CTR SYST VAL & CAL',10,1,'12 Nov 2012 12:17:20:280',2012
+union
+select 4,1,301,'MANAGEMENT OF',11,1,'04 Nov 2009 16:11:52:430',1169
+union
+select 4,2,302,'NEGOTIATION OF',12,1,'04 Nov 2009 16:12:59:947',1169
+union
+select 4,3,321,'FINAL PRODUCT',13,1,'04 Nov 2009 16:14:04:977',1169
+union
+select 4,4,322,'BUILD & VALIDATION',14,1,'04 Nov 2009 16:15:30:557',1169
+union
+select 4,5,331,'PROCESS & LOGISTIC',15,1,'29 Mar 2010 10:25:02:223',1169
+union
+select 4,6,311,'QUALITY ASSURANCE',16,1,'04 Nov 2009 16:16:21:273',1169
+union
+select 4,7,341,'SOURCING',17,1,'04 Nov 2009 16:16:44:947',1169
+union
+select 4,8,351,'CTR SYST DEV',18,1,'12 Nov 2012 12:18:00:987',2012
+union
+select 4,9,352,'CTR SYST VAL & CAL',19,1,'12 Nov 2012 12:18:33:397',2012
+union
+select 5,1,401,'MANAGEMENT OF',20,1,'04 Nov 2009 16:17:08:370',1169
+union
+select 5,2,402,'NEGOTIATION OF',21,1,'04 Nov 2009 16:17:28:213',1169
+union
+select 5,3,421,'IMPROVEMENT',22,1,'04 Nov 2009 16:18:01:370',1169
+union
+select 5,4,422,'VALIDATION PROJECT',23,1,'29 Mar 2010 10:05:53:957',1169
+union
+select 5,5,431,'KICK OFF, BUILD',24,1,'29 Mar 2010 10:26:19:990',1169
+union
+select 5,6,411,'QUALITY ASSURANCE',25,1,'04 Nov 2009 16:26:21:963',1169
+union
+select 5,7,441,'TIER II COMP PPAP',26,1,'04 Nov 2009 16:27:03:243',1169
+union
+select 5,8,451,'CTR SYST INDUS SUP',27,1,'12 Nov 2012 12:19:12:273',2012
+union
+select 5,9,452,'CTR SYST VAL & CAL',28,1,'12 Nov 2012 12:19:40:260',2012
+union
+select 6,1,501,'MANAGEMENT OF',29,1,'04 Nov 2009 16:27:36:760',1169
+union
+select 6,2,502,'NEGOTIATION OF',30,1,'04 Nov 2009 16:27:55:993',1169
+union
+select 6,3,521,'DESIGN PROJECT SUP',31,1,'04 Nov 2009 16:28:32:853',1169
+union
+select 6,4,522,'VALIDATION  & HOMOL',32,1,'29 Mar 2010 10:03:36:847',1169
+union
+select 6,5,531,'RUN @ RATE',33,1,'04 Nov 2009 16:30:08:650',1169
+union
+select 6,6,511,'PPAP, ROAD MAP',34,1,'29 Mar 2010 10:07:20:143',1169
+union
+select 6,7,541,'PURCH TRANSFER',35,1,'29 Mar 2010 10:10:04:050',1169
+union
+select 6,8,551,'CTR SYST DESIGN SUP',36,1,'12 Nov 2012 12:20:45:563',2012
+union
+select 6,9,552,'CTR SYST VAL & CAL',37,1,'12 Nov 2012 12:21:29:847',2012
+union
+select 7,1,601,'MANAGEMENT OF',38,1,'04 Nov 2009 16:31:22:087',1169
+union
+select 7,2,602,'NEGOTIATION OF',39,1,'29 Mar 2010 09:55:25:190',1169
+union
+select 7,3,621,'DESIGN PROJECT SUP',40,1,'04 Nov 2009 16:32:14:680',1169
+union
+select 7,4,622,'VALIDATION PROJECT',41,1,'04 Nov 2009 16:33:16:743',1169
+union
+select 7,5,631,'PROD RAMP UP',42,1,'29 Mar 2010 10:08:52:143',1169
+union
+select 7,6,611,'IMPROVEMENT PLAN',43,1,'04 Nov 2009 16:35:03:477',1169
+union
+select 7,7,641,'PURCH SUPPORT',44,1,'04 Nov 2009 16:35:52:417',1169
+union
+select 7,8,651,'CTR SYST DESIGN SUP',45,1,'12 Nov 2012 12:22:05:837',2012
+union
+select 7,9,652,'CTR SYST VAL & CAL',46,1,'12 Nov 2012 12:22:23:803',2012
+
+if @@error <> 0
+  goto ex
+   
+
+if (select count(*) from WORK_PACKAGES_TEMPLATE) = 46
+  begin
+    commit
+	print 'Script completed'
+	goto ret
+  end
+
+ex:
+rollback
+print 'Script failed'
+
+ret:

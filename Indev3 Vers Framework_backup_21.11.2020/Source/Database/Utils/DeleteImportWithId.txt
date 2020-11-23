@@ -1,0 +1,20 @@
+
+Ionel Burtan: deal-ul a fost asa
+Ionel Burtan: eu am predat scritpul penutru delete import
+Ionel Burtan: catre  Gilles
+Ionel Burtan: care avea voie sa il foloseasca
+Ionel Burtan: in caz de urgenta
+Ionel Burtan: si doar in anumite conditii: sa fie ultimul import din anul respectiv
+Ionel Burtan: idea e ca optiunea e scoasa intentionat din UI pentru importurile reusite
+Ionel Burtan: pentru a descuraja utilizatorii normali in aceasta directie
+
+Cu acel script se procedeaza asa:
+1. se ia import ID-ul care se paote vedea in UI pe tooltip
+2. se face un DB backup just in case
+3. se schimba Id-ul ala in script
+4. se ruleaza scriptul si se verifica
+
+IMPORTANT: Teoretic nu aveti ce sa stricati.
+Mai poti face extract-uri inainte si dupa ca sa te joci in excel si nu uita de back-up pentru siguranta
+
+CONCLUZIE: Problema e ca fac import de date si pe urma isi dau seama ca au uitat chestii prin SAP/MFG Pro si dupa ce le pun pe acolo si trebuiesc re-importate

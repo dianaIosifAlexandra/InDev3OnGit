@@ -1,0 +1,37 @@
+C:\INDev3\trunk\Source\Bin\Inergy.Indev3.BusinessLogic.dll
+C:\INDev3\trunk\Source\Bin\Inergy.Indev3.BusinessLogic.pdb
+C:\INDev3\trunk\Source\BusinessLogic\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
+C:\INDev3\trunk\Source\BusinessLogic\BusinessLogic\obj\Debug\Inergy.Indev3.BusinessLogic.dll
+C:\INDev3\trunk\Source\BusinessLogic\BusinessLogic\obj\Debug\Inergy.Indev3.BusinessLogic.pdb
+F:\INDev3\trunk\Source\Indev3WebSite\Indev3WebSite\Bin\Inergy.Indev3.BusinessLogic.dll
+F:\INDev3\trunk\Source\Indev3WebSite\Indev3WebSite\Bin\Inergy.Indev3.BusinessLogic.pdb
+F:\INDev3\trunk\Source\Bin\Inergy.Indev3.BusinessLogic.dll
+F:\INDev3\trunk\Source\Bin\Inergy.Indev3.BusinessLogic.pdb
+F:\INDev3\trunk\Source\BusinessLogic\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
+F:\INDev3\trunk\Source\BusinessLogic\BusinessLogic\obj\Debug\Inergy.Indev3.BusinessLogic.dll
+F:\INDev3\trunk\Source\BusinessLogic\BusinessLogic\obj\Debug\Inergy.Indev3.BusinessLogic.pdb
+F:\Indev3_2\trunk\Source\Bin\Inergy.Indev3.BusinessLogic.dll
+F:\Indev3_2\trunk\Source\Bin\Inergy.Indev3.BusinessLogic.pdb
+F:\Indev3_2\trunk\Source\BusinessLogic\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
+F:\Indev3_2\trunk\Source\BusinessLogic\BusinessLogic\obj\Debug\Inergy.Indev3.BusinessLogic.dll
+F:\Indev3_2\trunk\Source\BusinessLogic\BusinessLogic\obj\Debug\Inergy.Indev3.BusinessLogic.pdb
+D:\Indev3\trunk\Source\Bin\Inergy.Indev3.BusinessLogic.dll
+D:\Indev3\trunk\Source\Bin\Inergy.Indev3.BusinessLogic.pdb
+D:\Indev3\trunk\Source\BusinessLogic\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
+D:\Indev3\trunk\Source\BusinessLogic\BusinessLogic\obj\Debug\Inergy.Indev3.BusinessLogic.dll
+D:\Indev3\trunk\Source\BusinessLogic\BusinessLogic\obj\Debug\Inergy.Indev3.BusinessLogic.pdb
+D:\Indev3 svn\trunk\Source\Bin\Inergy.Indev3.BusinessLogic.dll
+D:\Indev3 svn\trunk\Source\Bin\Inergy.Indev3.BusinessLogic.pdb
+D:\Indev3 svn\trunk\Source\BusinessLogic\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
+D:\Indev3 svn\trunk\Source\BusinessLogic\BusinessLogic\obj\Debug\Inergy.Indev3.BusinessLogic.dll
+D:\Indev3 svn\trunk\Source\BusinessLogic\BusinessLogic\obj\Debug\Inergy.Indev3.BusinessLogic.pdb
+D:\Indev3 Vers Framework\Source\Bin\Inergy.Indev3.BusinessLogic.dll
+D:\Indev3 Vers Framework\Source\Bin\Inergy.Indev3.BusinessLogic.pdb
+D:\Indev3 Vers Framework\Source\BusinessLogic\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
+D:\Indev3 Vers Framework\Source\BusinessLogic\BusinessLogic\obj\Debug\Inergy.Indev3.BusinessLogic.dll
+D:\Indev3 Vers Framework\Source\BusinessLogic\BusinessLogic\obj\Debug\Inergy.Indev3.BusinessLogic.pdb
+D:\Projects\Indev3 Vers Framework\Source\Bin\Inergy.Indev3.BusinessLogic.dll
+D:\Projects\Indev3 Vers Framework\Source\Bin\Inergy.Indev3.BusinessLogic.pdb
+D:\Projects\Indev3 Vers Framework\Source\BusinessLogic\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
+D:\Projects\Indev3 Vers Framework\Source\BusinessLogic\BusinessLogic\obj\Debug\Inergy.Indev3.BusinessLogic.dll
+D:\Projects\Indev3 Vers Framework\Source\BusinessLogic\BusinessLogic\obj\Debug\Inergy.Indev3.BusinessLogic.pdb

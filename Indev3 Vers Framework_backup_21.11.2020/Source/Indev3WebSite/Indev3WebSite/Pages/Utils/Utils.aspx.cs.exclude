@@ -1,0 +1,143 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.IO;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using Inergy.Indev3.ApplicationFramework;
+using Inergy.Indev3.ApplicationFramework.Common;
+using Inergy.Indev3.ApplicationFramework.ExceptionHandling;
+using Inergy.Indev3.BusinessLogic.AnnualBudget;
+using Inergy.Indev3.BusinessLogic.Authorization;
+using Inergy.Indev3.BusinessLogic.Upload;
+using Inergy.Indev3.BusinessLogic.Common;
+using Inergy.Indev3.WebFramework;
+using Inergy.Indev3.WebFramework.Utils;
+using Telerik.WebControls;
+using Inergy.Indev3.BusinessLogic.Budget;
+
+public partial class Pages_Utils : IndBasePage
+{
+    #region Members
+    ArrayList errorMessages = new ArrayList();
+
+    private CurrentUser currentUser
+    {
+        get
+        {
+            return SessionManager.GetSessionValueRedirect(this, SessionStrings.CURRENT_USER) as CurrentUser;
+        }
+    }
+
+    private CurrentProject currentProject
+    {
+        get
+        {
+            return SessionManager.GetSessionValueRedirect(this, SessionStrings.CURRENT_PROJECT) as CurrentProject;
+        }
+    }
+
+    string code;
+    #endregion
+    
+    #region events
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        //The code parameter is always the first parameter
+        code = HttpContext.Current.Request.QueryString[0].ToLower();
+        object lastValidatedVersion = null;
+
+        try
+        {
+            switch (code)
+            {
+                case "rev":
+                    btnDoPostback.OnClientClick = "if (!confirm('Are you sure you want to unvalidate the revised budget?')) {return false;} else {return true;}";
+                    RevisedBudget revisedBudget = new RevisedBudget(SessionManager.GetConnectionManager(this));
+                    revisedBudget.IdProject = currentProject.Id;
+                    lastValidatedVersion = revisedBudget.GetLastValidatedVersion();
+
+                    lblMessage.InnerText = "Clicking the button you'll un-validate the last version of revised budget.";
+                    if (string.IsNullOrEmpty(lastValidatedVersion.ToString()) || int.Parse(lastValidatedVersion.ToString()) <= 0)
+                    {
+                        btnDoPostback.Enabled = false;
+                        throw new Exception("The last budget's revised version is not validated.");
+                    }
+                    else
+                    {
+                        btnDoPostback.Enabled = true;
+                    }
+
+                    break;
+                case "ref":
+                    btnDoPostback.OnClientClick = "if (!confirm('Are you sure you want to unvalidate the forecast budget?')) {return false;} else {return true;}";
+                    ReforecastBudget reforecastBudget = new ReforecastBudget(SessionManager.GetConnectionManager(this));
+                    reforecastBudget.IdProject = currentProject.Id;
+                    lastValidatedVersion = reforecastBudget.GetLastValidatedVersion();
+
+                    lblMessage.InnerText = "Clicking the button you'll un-validate the last version of reforecast budget.";
+                    if (string.IsNullOrEmpty(lastValidatedVersion.ToString()) || int.Parse(lastValidatedVersion.ToString()) <= 0)
+                    {
+                        btnDoPostback.Enabled = false;
+                        throw new Exception("The last budget's reforecast version is not validated");
+                    }
+                    else
+                    {
+                        btnDoPostback.Enabled = true;
+                    }
+                    break;
+            }
+        }
+        catch (Exception ex)
+        {
+            ShowError(new IndException(ex));
+            return;
+        }
+    }
+
+
+    protected void btnProcess_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            switch (code)
+            {
+                case "rev":
+                    RevisedBudget revisedBudget = new RevisedBudget(SessionManager.GetConnectionManager(this));
+                    revisedBudget.IdProject = currentProject.Id;
+                    revisedBudget.Unvalidate();
+                    break;
+                case "ref":
+                    ReforecastBudget reforecastBudget = new ReforecastBudget(SessionManager.GetConnectionManager(this));
+                    reforecastBudget.IdProject = currentProject.Id;
+                    reforecastBudget.Unvalidate();
+
+                    break;
+            }
+
+        }
+        catch (Exception ex)
+        {
+            ShowError(new IndException(ex));
+            return;
+        }
+        if (!ClientScript.IsClientScriptBlockRegistered("ConfirmUnvalidate"))
+        {
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "ConfirmUnvalidate", "alert('Un-validation has been completed.')", true);
+        }
+        btnDoPostback.Enabled = false;
+
+    }
+    #endregion
+
+    #region Methods
+
+    #endregion
+}

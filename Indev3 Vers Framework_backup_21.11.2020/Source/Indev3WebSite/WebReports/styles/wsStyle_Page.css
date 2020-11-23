@@ -1,0 +1,140 @@
+html, body, #wrapper
+{ 
+    width: 100%; 
+    height: 100%; 
+    overflow:auto;
+} 
+
+body
+{
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+	font-size :10pt;
+	margin: 0;
+	background-image: url(../Images/fond-background.gif);
+}
+
+TABLE, TD, TR, TH
+{
+    FONT-SIZE: 12px;
+}
+
+.banner
+{
+	background-image :url(../Images/fond-top.gif);
+	height :75px;
+}
+
+
+.leftlogo
+{
+	float: left;
+	clear: left;
+	position:absolute;
+	left: 0px;
+}
+
+.rightlogo
+{
+	top: 0px;
+	height: 75px;
+	clear: right;
+	float: right;
+}
+
+.niveau3
+{
+    FONT-SIZE: 12px;
+    COLOR: #cccccc;
+    FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+
+.niveau3:hover
+{
+    FONT-SIZE: 12px;
+    COLOR: #cccccc;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    TEXT-DECORATION: underline
+}
+
+.niveau3:link
+{
+    FONT-SIZE: 12px;
+    COLOR: #cccccc;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    TEXT-DECORATION: underline
+}
+
+.blanc
+{
+    FONT-SIZE: 12px;
+    COLOR: #ffffff;
+    FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+
+.blanc:hover
+{
+    FONT-SIZE: 12px;
+    COLOR: #ffffff;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    TEXT-DECORATION: underline
+}
+
+.blanc:link
+{
+    FONT-SIZE: 12px;
+    COLOR: #ffffff;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    TEXT-DECORATION: underline
+}
+
+.UserControlPosition
+{
+	background:transparent;
+	margin:10px 5px 30px 30px;
+}
+
+img
+{
+	border: 0pt
+}
+
+#main
+{
+	margin-bottom:20px; /*Modify value as needed for footer height.*/ 
+    height: auto;
+}
+
+#filter
+{
+	height:30px;
+	background : gray url(../Components/Navbar/Images/fond-niveau3.gif);
+	position:relative;
+	center:0%;
+	padding: 0px 10px 0px 10px;
+}
+
+#core
+{
+	position:relative;
+	center:0px;
+	background:transparent;
+}
+
+#footer
+{
+	FONT-SIZE: 12px;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	width: 100%;
+	background : gray url(../Images/fond-footer.gif);
+	color : #CCCCCC;
+	padding: 2px 5px;
+	bottom:0px;
+	position:absolute;
+}
+
+#wrapper
+{
+    position: absolute; 
+    top: 0; 
+    left: 0;
+}

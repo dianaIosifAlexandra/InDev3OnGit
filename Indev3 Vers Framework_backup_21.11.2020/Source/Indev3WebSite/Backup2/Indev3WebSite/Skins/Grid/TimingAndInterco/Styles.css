@@ -1,0 +1,174 @@
+/* r.a.d.grid TimingAndInterco skin */
+
+/* 
+	To correctly apply this skin
+	specify Border="0" in the r.a.d.grid server tag
+	<mastertableview border="0"></mastertableview>
+*/
+
+.RadGrid_TimingAndInterco
+{
+	border: solid 0px #E9E9E9;
+	border-top: 0px;
+	font: normal 11px Arial, Verdana, Sans-serif;
+	cursor: default;
+	width:auto !important;
+}
+
+.MasterTable_TimingAndInterco
+{
+	width:auto !important;
+	border: 0px;
+	border-collapse: separate !important;
+	background-color:#E9E9E9;	
+}
+
+div.RadGrid_TimingAndInterco table td
+{
+	padding: 0px 4px;
+	text-align: left;
+}
+
+.RadGrid_TimingAndInterco input  
+{  
+    cursor:pointer;  
+}  
+
+tfoot 
+{
+	padding: 0px 0px !important;
+	background-color:#9d9d9d;
+}
+
+.SelectedRow_TimingAndInterco td
+{
+	border-top: solid 0px #dcdddf;
+	border-bottom: solid 1px #b5bac0;
+	background: #f8f8f8;
+	padding: 2px 4px !important;
+}
+
+.ActiveRow_TimingAndInterco td
+{
+	border-top: solid 0px #dcdddf;
+	border-bottom: solid 0px #b5bac0;
+	background-color: red;
+	padding: 2px 4px !important;
+}
+
+th.GridHeader_TimingAndInterco, th.ResizeHeader_TimingAndInterco
+{
+	background: url('Img/headerBg.gif') no-repeat;
+	
+	padding: 3px 4px;
+	height: 34px !important;
+	text-align: left;
+	color: #f0f5f6;
+	font-size: 13px;
+}
+
+th.GridHeader_TimingAndInterco a
+{
+	text-decoration: none;
+	color: #f0f5f6 !important;
+}
+
+/* ascending / descending sorting arrow */
+.GridHeader_TimingAndInterco img,
+.GroupPanelItems_TimingAndInterco input
+{
+	vertical-align: middle;
+}
+
+td.GridHeader_TimingAndInterco input
+{
+	width: auto;
+	float: left;
+	border: solid 0px #474b38;
+	background-color: #fafafa;
+	font: bold 10px Verdana, Arial, Sans-serif;
+	color: #989cb0;
+	margin-right: 2px;
+}
+
+.GroupPanel_TimingAndInterco
+{
+	width: 100%;
+	height: 29px;
+	text-align: left;
+	color: #fff;
+}
+
+/* grouping button */
+.GroupPanelItems_TimingAndInterco
+{
+	color: #54626f;
+	border: solid 0px #fff;
+	padding-left: 4px;
+	white-space:  nowrap;
+	font-size: 11px;
+}
+
+tr.GroupHeader_TimingAndInterco
+{
+	color: #f0f5f6;
+	font-weight: bold;
+}
+
+tr.GridPager_TimingAndInterco
+{
+	background-color:Green;
+	color: white;
+	cursor: default;
+	height: 18px;
+}
+
+.GridPager_TimingAndInterco a
+{
+	background-color:Green;
+	color: #f0f5f6;
+	font-weight: bold;
+}
+
+.CenteredHeaderCell
+{
+	background: url('Img/headerBg.gif') no-repeat;
+	
+	padding: 3px 4px;
+	height: 34px !important;
+	color: #f0f5f6;
+	font-size: 13px;
+	text-align:center !important;
+}
+.CenteredCell
+{
+	text-align:center !important;
+}
+
+.CenteredFooterCell 
+{
+	text-align:center !important;
+}
+
+.GridFooter_TimingAndInterco 
+{
+	text-align:center !important;
+}
+
+.GridHeaderNoReorder
+{
+	background: url('Img/headerBg.gif') no-repeat;
+	
+	padding: 3px 4px;
+	height: 34px !important;
+	text-align: left;
+	color: #f0f5f6;
+	font-size: 13px;
+	cursor:default!important;
+}
+
+.GridElements_TimingAndInterco_Hide
+{
+    border: 1px solid red;
+    display:none !important;
+}

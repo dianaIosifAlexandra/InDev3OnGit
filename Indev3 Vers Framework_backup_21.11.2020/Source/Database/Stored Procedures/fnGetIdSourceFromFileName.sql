@@ -1,0 +1,51 @@
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE ID = object_id(N'[dbo].[fnGetIdSourceFromFileName]'))
+	DROP FUNCTION fnGetIdSourceFromFileName
+GO
+
+CREATE FUNCTION fnGetIdSourceFromFileName
+(
+@filename nvarchar(400)
+)
+RETURNS INT
+AS
+BEGIN
+-- 	DECLARE @filename nvarchar(400)
+-- 	SET  @filename= 'D\\WORK_1\OTHROM082009_10_2007_12_12.csv'
+	DECLARE @IdSource INT
+	DECLARE @UNDERSCOREPOS INT
+	DECLARE @POINTPOS INT
+	DECLARE @SLASHPOS INT
+	DECLARE @FILENOPATH nvarchar(400)
+	
+	set @IDSOURCE = -1
+
+	--take only the file name...no path
+	SET @SLASHPOS = CHARINDEX('\',REVERSE(@filename))
+	SET @FILENOPATH = SUBSTRING(@filename,LEN(@filename)-@SLASHPOS+2,@SLASHPOS-1)	
+	IF (LEN(@FILENOPATH)>0)
+	BEGIN
+		SET @UNDERSCOREPOS = CHARINDEX('_',@FILENOPATH)
+		SET @POINTPOS = CHARINDEX('_',@FILENOPATH,@UNDERSCOREPOS+1)
+	
+	
+		--if no more _ then search for point from extension
+		IF(@POINTPOS<=0)
+		BEGIN
+			SET @POINTPOS = CHARINDEX('.',@FILENOPATH)
+-- 			PRINT @POINTPOS
+		END
+	
+		IF (@UNDERSCOREPOS>0 AND @POINTPOS>0)
+		BEGIN
+			SET @IDSOURCE = SUBSTRING(@FILENOPATH,@UNDERSCOREPOS+1,@POINTPOS-@UNDERSCOREPOS-1)
+		END
+		
+	END
+	--ELSE
+-- 	PRINT @IDSOURCE
+	RETURN @IDSOURCE
+
+END
+GO
+
+

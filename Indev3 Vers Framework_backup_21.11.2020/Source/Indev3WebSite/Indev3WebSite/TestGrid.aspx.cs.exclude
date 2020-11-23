@@ -1,0 +1,239 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using Telerik.WebControls;
+using System.Collections;
+using Inergy.Indev3.WebFramework;
+using Inergy.Indev3.DataAccess;
+using Inergy.Indev3.WebFramework.Utils;
+using Inergy.Indev3.BusinessLogic.Financial;
+using Inergy.Indev3.ApplicationFramework.ExceptionHandling;
+using Inergy.Indev3.WebFramework.WebControls;
+using Inergy.Indev3.ApplicationFramework.Common;
+using Inergy.Indev3.ApplicationFramework;
+using Inergy.Indev3.BusinessLogic.Common;
+
+public partial class TestGrid : IndBasePage
+{
+    private object ConnectionManager = null;
+    private DataSet SourceDS;
+
+    protected override void OnPreRender(EventArgs e)
+    {
+        try
+        {
+            base.OnPreRender(e);
+            pnlExchangeRates.Attributes.Add("style", "Height: auto;");
+
+            foreach (GridColumn column in RadGrid1.MasterTableView.Columns)
+            {
+                ApplyColumnCSSClass(column);
+            }
+        }
+        catch (IndException ex)
+        {
+            ShowError(ex);
+            return;
+        }
+        catch (Exception ex)
+        {
+            ShowError(new IndException(ex));
+            return;
+        }
+    }
+
+    protected void Page_Load(object sender, System.EventArgs e)
+    {
+        if (!Page.IsPostBack)
+        {
+            LoadYearCombo();
+        }
+        LoadExchangeRates();
+    }
+ 
+    //private DataTable DataSource
+    //{
+    //    get
+    //    {
+    //        if (ViewState["RadGridCS"] == null)
+    //        {
+    //            DataTable data = new DataTable();
+    //            data.Columns.Add("ID");
+    //            data.Columns.Add("Title");
+    //            data.Columns.Add("Name");
+    //            data.Columns.Add("HireDate", typeof(DateTime));
+    //            data.Columns.Add("Age", typeof(Double));
+ 
+    //            data.Rows.Add(new object[] { 1, "Mr.", "John Smith", new DateTime(1998, 10, 10), 34 });
+    //            data.Rows.Add(new object[] { 2, "Mrs.", "Jane Brown", new DateTime(2003, 12, 25), 25 });
+    //            data.Rows.Add(new object[] { 3, "Mr.", "Peter Johnson", new DateTime(2001, 8, 22), 45 });
+    //            data.Rows.Add(new object[] { 4, "Ms.", "Diane Klive", new DateTime(1999, 04, 14), 23 });
+    //            data.Rows.Add(new object[] { 5, "Mrs.", "Megan Hammer", new DateTime(1997, 11, 05), 31 });
+    //            ViewState["RadGridCS"] = data;
+    //        }
+    //        return (DataTable)ViewState["RadGridCS"];
+    //    }
+    //}
+ 
+    protected void RadGrid1_UpdateCommand(object source, GridCommandEventArgs e)
+    {
+
+        GridEditableItem editedItem = e.Item as GridEditableItem;
+ 
+        try
+        {
+            DoUpdateAction(editedItem);
+        }
+        catch (IndException indExc)
+        {
+            e.Canceled = true;
+            ShowError(indExc);
+        }
+        catch (Exception exc)
+        {
+            e.Canceled = true;
+            ShowError(new IndException(exc));
+        }
+    }
+
+    protected void RadGrid1_NeedDataSource(object source, GridNeedDataSourceEventArgs e)
+    {
+        RadGrid1.DataSource = SourceDS;
+
+    }
+
+    protected void cmbYear_SelectedIndexChanged(object o, RadComboBoxSelectedIndexChangedEventArgs e)
+    {
+        try
+        {
+            LoadExchangeRates();
+            RadGrid1.DataBind();
+
+        }
+        catch (IndException ex)
+        {
+            ShowError(ex);
+            return;
+        }
+        catch (Exception ex)
+        {
+            ShowError(new IndException(ex));
+            return;
+        }
+    }
+
+    private void ApplyColumnCSSClass(GridColumn column)
+    {
+        if (GetColumnIndex(column) % 2 == 1)
+        {
+            column.ItemStyle.CssClass = "IndEvenColumn";
+        }
+        else
+        {
+            column.ItemStyle.CssClass = "IndOddColumn";
+        }
+    }
+
+    private int GetColumnIndex(GridColumn currentColumn)
+    {
+        int index = RadGrid1.Columns.IndexOf(currentColumn);
+        int visibleIndex = 0;
+        foreach (GridColumn column in RadGrid1.Columns)
+        {
+            if (column is GridColumn && column.Display)
+            {
+                if (RadGrid1.Columns.IndexOf(column) < index)
+                {
+                    visibleIndex++;
+                }
+            }
+        }
+        return visibleIndex;
+    }
+
+    private void DoUpdateAction(GridEditableItem item)
+    {
+        ConversionUtils conversionUtils = new ConversionUtils();
+
+        int idCurrency = 0;
+        Hashtable newValues = new Hashtable();
+        //Extract the values entered by the user
+        item.ExtractValues(newValues);
+        //If the new value is null, convert it to the empty string to avoid multiple null checks
+        if (newValues["BudgetExchangeRate"] == null)
+        {
+            newValues["BudgetExchangeRate"] = String.Empty;
+        }
+
+        ArrayList errors = new ArrayList();
+        decimal rate = 0;
+        //Check if the update hour is of decimal type
+        if (!String.IsNullOrEmpty(newValues["BudgetExchangeRate"].ToString()) && decimal.TryParse(newValues["BudgetExchangeRate"].ToString(), out rate) == false)
+            errors.Add(ApplicationMessages.MessageWithParameters(ApplicationMessages.EXCEPTION_FIELD_NOT_NUMERIC, "Budget Exchange Rate"));
+        if (String.IsNullOrEmpty(newValues["BudgetExchangeRate"].ToString()))
+            errors.Add(ApplicationMessages.MessageWithParameters(ApplicationMessages.EXCEPTION_FIELD_CANNOT_BE_EMPTY, "Budget Exchange Rate"));
+        if (rate < 0)
+            errors.Add(ApplicationMessages.MessageWithParameters(ApplicationMessages.EXCEPTION_FIELD_MUST_BE_POSITIVE, "Budget Exchange Rate"));
+        string temp = item.GetDataKeyValue("IdCurrency").ToString();
+        if (string.IsNullOrEmpty(temp) || !int.TryParse(temp,out idCurrency))
+            errors.Add(ApplicationMessages.MessageWithParameters("IdCurrency is missing", "Budget Exchange Rate"));
+        
+        //If there are errors the update shouldn't be done
+        if (errors.Count != 0)
+        {
+            throw new IndException(errors);
+        }
+
+        UpdateBudgetExchangeRate(idCurrency, rate);
+
+    }
+
+    private void UpdateBudgetExchangeRate(int idCurrency, decimal rate)
+    {
+        try
+        {
+            object connManager = SessionManager.GetConnectionManager(this);
+            ExchangeRate exchangeRate = new ExchangeRate(ConnectionManager);
+            //Use the year selected in the combo
+            exchangeRate.Year = int.Parse(cmbYear.Items[cmbYear.SelectedIndex].Text);
+            exchangeRate.Value = rate;
+            exchangeRate.IdCurrency = idCurrency;
+            exchangeRate.IdCategory = ApplicationConstants.ID_EXCHANGE_RATE_FOR_BUDGET;
+            exchangeRate.SetModified();
+            //save value
+            exchangeRate.Save();
+            LoadExchangeRates();
+            RadGrid1.DataBind();
+        }
+        catch (Exception ex)
+        {
+            ShowError(new IndException(ex));
+        }
+    }
+
+    private void LoadExchangeRates()
+    {
+        //Get the connection manger
+        ConnectionManager = SessionManager.GetConnectionManager(this);
+
+        ExchangeRates exchangeRates = new ExchangeRates(ConnectionManager);
+        //Use the year selected in the combo
+        exchangeRates.Year = int.Parse(cmbYear.Items[cmbYear.SelectedIndex].Text);
+        //Get the dataset
+        SourceDS = exchangeRates.GetAll(true);
+
+        RadGrid1.DataSource = SourceDS;
+        RadGrid1.DataMember = SourceDS.Tables[0].TableName;
+    }
+
+    private void LoadYearCombo()
+    {
+        //Set the combo data source
+        cmbYear.DataSource = PeriodUtils.GetYears();
+        cmbYear.DataBind();
+        cmbYear.SelectedIndex = cmbYear.Items.Count - 1 - ApplicationConstants.YEAR_AHEAD_TO_INCLUDE; /*select curent year*/
+    }
+}

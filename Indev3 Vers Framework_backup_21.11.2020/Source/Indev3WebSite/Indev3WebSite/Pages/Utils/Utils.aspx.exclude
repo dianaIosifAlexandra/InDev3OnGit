@@ -1,0 +1,67 @@
+<%@ Page Language="C#" MasterPageFile="~/Template.master" AutoEventWireup="true"
+    CodeFile="Utils.aspx.cs" Inherits="Pages_Utils" Title="Utils" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ph" runat="Server">
+    <script type="text/javascript">
+function HideErrorPanel()
+{
+    try{
+        var pnlErrors = "<%=((Panel)this.Page.Master.FindControl("pnlErrors")).ClientID%>";
+        var pnl = document.getElementById(pnlErrors);
+        pnl.style.display = "none";
+     }catch(e){}
+}
+
+
+    </script>
+    <asp:Panel ID="pnlUnvalidateBudget" runat="Server" CssClass="tabbed backgroundColorIE" style="text-align:left;margin-left:15px;width:950px;padding-left:20px;">
+        <br />
+        <label class="IndLabel" runat="server" id="lblMessage" />
+       <br /><br />
+           <asp:Button ID="btnDoPostback" runat="server" Text="Process" class="button" OnClick="btnProcess_Click"
+              OnClientClick="if (!confirm('Are you sure you want to unvalidate the revised budget?')) {return false;} else {return true;}" />
+    </asp:Panel>
+
+    <script type="text/javascript">
+        if (!document.querySelectorAll) {
+            document.querySelectorAll = function (selectors) {
+                var style = document.createElement('style'), elements = [], element;
+                document.documentElement.firstChild.appendChild(style);
+                document._qsa = [];
+
+                style.styleSheet.cssText = selectors + '{x-qsa:expression(document._qsa && document._qsa.push(this))}';
+                window.scrollBy(0, 0);
+                style.parentNode.removeChild(style);
+
+                while (document._qsa.length) {
+                    element = document._qsa.shift();
+                    element.style.removeAttribute('x-qsa');
+                    elements.push(element);
+                }
+                document._qsa = null;
+                return elements;
+            };
+        }
+
+        if (!document.querySelector) {
+            document.querySelector = function (selectors) {
+                var elements = document.querySelectorAll(selectors);
+                return (elements.length) ? elements[0] : null;
+            };
+        }
+
+        (function () {
+            var elements = document.querySelectorAll(".backgroundColorIE");
+            var ieVersion = GetInternetExplorerVersion();
+            if (elements != null) {
+                for (var i = 0; i < elements.length; i++) {
+                    if (ieVersion < 9 && ieVersion > 0)
+                        elements[i].style.backgroundColor = "#757575";
+                    else {
+                        elements[i].style.backgroundColor = "#6E6E6E";
+                    }
+                }
+            }
+        })()
+    </script>
+</asp:Content>

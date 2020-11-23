@@ -1,0 +1,156 @@
+/* r.a.d.grid Budget skin */
+
+/* 
+	To correctly apply this skin
+	specify Border="0" in the r.a.d.grid server tag
+	<mastertableview border="0"></mastertableview>
+*/
+
+.RadGrid_Budget
+{
+	border: solid 0px #E9E9E9;
+	border-top: 0px;
+	font: normal 11px Arial, Verdana, Sans-serif;
+	cursor: default;
+	width:auto !important;
+}
+
+.MasterTable_Budget
+{
+	width:auto !important;
+	border: 0px;
+	border-collapse: separate !important;
+	background-color:#E9E9E9;
+}
+
+.GridElements_IndGenericGrid_Hide
+{
+    border:1px solid red;
+    display:none;
+}
+
+
+div.RadGrid_Budget table td
+{
+	padding: 0px 0px
+/*	text-align: center;*/
+}
+
+.RadGrid_Budget input  
+{  
+    cursor:pointer;  
+}  
+
+tfoot 
+{
+	padding: 0px 0px !important;
+	background-color:#9d9d9d;
+}
+
+.GridRow_Budget td
+{
+	padding: 2px 2px !important;
+	background-color:#E9E9E9;
+}
+
+.GridEditRow_Budget td
+{
+	padding: 2px 2px !important;
+	background-color:#E9E9E9;
+}
+
+.GridAltRow_Budget td
+{
+	padding: 2px 2px !important;
+	background-color:#E9E9E9;
+}
+
+.SelectedRow_Budget td
+{
+	border-top: solid 0px #dcdddf;
+	border-bottom: solid 1px #b5bac0;
+	background: #f8f8f8;
+	padding: 2px 4px !important;
+}
+
+.ActiveRow_Budget td
+{
+	border-top: solid 0px #dcdddf;
+	border-bottom: solid 0px #b5bac0;
+	background-color: red;
+	padding: 2px 4px !important;
+}
+
+th.GridHeader_Budget, th.ResizeHeader_Budget
+{
+	background: url('Img/headerBg.gif') no-repeat;
+	
+	padding: 3px 2px 0px 2px !important;
+	height: 34px !important;
+	/*text-align: left;*/
+	color: #f0f5f6;
+	font: normal 11px Arial, Verdana, Sans-serif;
+}
+
+th.GridHeader_Budget a
+{
+	text-decoration: none;
+	color: #f0f5f6 !important;
+}
+
+/* ascending / descending sorting arrow */
+.GridHeader_Budget img,
+.GroupPanelItems_Budget input
+{
+	vertical-align: middle;
+}
+
+td.GridHeader_Budget input
+{
+	width: auto;
+	float: left;
+	border: solid 0px #474b38;
+	background-color: #fafafa;
+	font: bold 10px Verdana, Arial, Sans-serif;
+	color: #989cb0;
+	margin-right: 2px;
+}
+
+.GroupPanel_Budget
+{
+	width: 100%;
+	height: 29px;
+	text-align: left;
+	color: #fff;
+}
+
+/* grouping button */
+.GroupPanelItems_Budget
+{
+	color: #54626f;
+	border: solid 0px #fff;
+	padding-left: 4px;
+	white-space:  nowrap;
+	font-size: 11px;
+}
+
+tr.GroupHeader_Budget
+{
+	color: #f0f5f6;
+	font-weight: bold;
+}
+
+tr.GridPager_Budget
+{
+	background-color:Green;
+	color: white;
+	cursor: default;
+	height: 18px;
+}
+
+.GridPager_Budget a
+{
+	background-color:Green;
+	color: #f0f5f6;
+	font-weight: bold;
+}

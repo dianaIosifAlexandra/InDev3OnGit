@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{69C2A2ED-6A08-47BF-B24C-076A4F592C53}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Inergy.Indev3.DataAccess</RootNamespace>
+    <AssemblyName>Inergy.Indev3.DataAccess</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Inergy.Indev3.ApplicationFramework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Indev3WebSite\Indev3WebSite\Bin\Inergy.Indev3.ApplicationFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Inergy.Indev3.Entities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Indev3WebSite\Indev3WebSite\Bin\Inergy.Indev3.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnnualBudget\DBAnnualImports.cs" />
+    <Compile Include="AnnualBudget\DBAnnualUpload.cs" />
+    <Compile Include="AnnualBudget\DbAnnualDataLogs.cs" />
+    <Compile Include="AnnualBudget\DBAnnualDataStatus.cs" />
+    <Compile Include="AnnualBudget\DBAnnualImportDetails.cs" />
+    <Compile Include="AnnualBudget\DBAnnualDownload.cs" />
+    <Compile Include="Authorization\DBCurrentUser.cs" />
+    <Compile Include="Authorization\DBProfile.cs" />
+    <Compile Include="Budget\DBFollowUpCompletionBudget.cs" />
+    <Compile Include="Budget\DBFollowUpRevisedBudget.cs" />
+    <Compile Include="Budget\DBProjectCopyCoreTeam.cs" />
+    <Compile Include="Budget\DBProjectSelectorFilter.cs" />
+    <Compile Include="Budget\DBReforecastBudget.cs" />
+    <Compile Include="Budget\DBRevisedBudgetOtherCosts.cs" />
+    <Compile Include="Budget\DBCurrencyConverter.cs" />
+    <Compile Include="Budget\DBExchangeRateReader.cs" />
+    <Compile Include="Budget\DBCostCenterFilter.cs" />
+    <Compile Include="Budget\DBFollowUpInitialBudget.cs" />
+    <Compile Include="Budget\DBInitialBudget.cs" />
+    <Compile Include="Budget\DBInitialBudgetOtherCosts.cs" />
+    <Compile Include="Budget\DBProjectCoreTeamMember.cs" />
+    <Compile Include="Budget\DBProjectFunction.cs" />
+    <Compile Include="Budget\DBCurrentProject.cs" />
+    <Compile Include="Budget\DBRevisedBudget.cs" />
+    <Compile Include="Budget\DBTimingAndInterco.cs" />
+    <Compile Include="Budget\DBWPPreselection.cs" />
+    <Compile Include="Catalogues\DBAssociate.cs" />
+    <Compile Include="Catalogues\DBCostCenter.cs" />
+    <Compile Include="Catalogues\DBCostIncomeType.cs" />
+    <Compile Include="Catalogues\DBCountry.cs" />
+    <Compile Include="Catalogues\DBCurrency.cs" />
+    <Compile Include="Catalogues\DBDepartment.cs" />
+    <Compile Include="Catalogues\DBExchangeRate.cs" />
+    <Compile Include="Catalogues\DBFunction.cs" />
+    <Compile Include="Catalogues\DBGlAccount.cs" />
+    <Compile Include="Catalogues\DBHourlyRate.cs" />
+    <Compile Include="Catalogues\DBInergyCountry.cs" />
+    <Compile Include="Catalogues\DBInergyLocation.cs" />
+    <Compile Include="Catalogues\DBOwner.cs" />
+    <Compile Include="Catalogues\DBOwnerType.cs" />
+    <Compile Include="Catalogues\DBProgram.cs" />
+    <Compile Include="Catalogues\DBProject.cs" />
+    <Compile Include="Catalogues\DBProjectPhase.cs" />
+    <Compile Include="Catalogues\DBProjectType.cs" />
+    <Compile Include="Catalogues\DBRegion.cs" />
+    <Compile Include="Catalogues\DBWorkPackage.cs" />
+    <Compile Include="Catalogues\DBWorkPackageTemplate.cs" />
+    <Compile Include="ConnectionManager.cs" />
+    <Compile Include="DbGenericEntity.cs" />
+    <Compile Include="DBParameter.cs" />
+    <Compile Include="DBSessionConnectionHelper.cs" />
+    <Compile Include="DBStoredProcedure.cs" />
+    <Compile Include="Extract\DBExtract.cs" />
+    <Compile Include="Extract\DBExtractByFunctionFilter.cs" />
+    <Compile Include="Extract\DBExtractTrackingData.cs" />
+    <Compile Include="Extract\DBTrackingActivityLog.cs" />
+    <Compile Include="Financial\DBExchangeRate.cs" />
+    <Compile Include="Financial\DBExchangeRates.cs" />
+    <Compile Include="UploadInitialBudget\DBImportInitialBudget.cs" />
+    <Compile Include="Olap\DBOlapHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UploadRevisedBudget\DBImportRevisedBudget.cs" />
+    <Compile Include="Upload\DbDataLogs.cs" />
+    <Compile Include="Upload\DBImportDetails.cs" />
+    <Compile Include="Upload\DBDataStatus.cs" />
+    <Compile Include="Upload\DBImportDetailsKeyRowsMissing.cs" />
+    <Compile Include="Upload\DBImports.cs" />
+    <Compile Include="Upload\DBImportSources.cs" />
+    <Compile Include="UserSettings\DBUserSettings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

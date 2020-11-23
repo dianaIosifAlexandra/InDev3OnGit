@@ -1,0 +1,224 @@
+[Definition]
+Connection  = "Provider=MSOLAP.2;Data Source=patrocle;Initial Catalog=Indev3"
+CubeName=[Exchange_Rates]
+ParametersDefault="@Measures=[Measures].[ExchangeRate];@COLUMNS={Hierarchize({Distinct({[CUR_CODE].Members})})};@PERIODS=[PERIODS].[Total].[2008].[Jan 2008];@ROWS={Hierarchize({Distinct({[CUR_NAME].Members})})}"
+Menus=Measures;COLUMNS;PERIODS;ROWS
+'SkinFile="styles\@#wsSkinFile"
+'ButtonSubmitFormCaption="Validate"
+TableType=1
+'FormName=wsMenus
+'TableStyle=wsMENUTable
+'GlobalDIVStyle=wsMENUDiv
+'ButtonSubmitFormStyle=wsValidateButton
+'ButtonsTDStyle=wsMENUButtons
+'OLAPRoles=""
+'User="Admin"
+'ButtonUpdateFilterCaption="Update filters"
+ButtonsDisposition=verticalUV
+Notify = True
+NotifyLanguage = "VBScript"
+'GlobalNotify = True
+'GlobalNotifyLanguage = "VBScript"
+'GlobalNotifyFile = "test.notif"
+
+[Menu_ROWS]
+ComboName=@ROWS
+Type=FixedList
+Values="XXX;"
+Captions="XXX;"
+ComboStyle=owSystem
+
+[Menu_COLUMNS]
+ComboName=@COLUMNS
+Type=FixedList
+Values="XXX;"
+Captions="XXX;"
+ComboStyle=owSystem
+
+[Menu_PAGEIDXROW]
+ComboName=@PAGEIDXROW
+Type=FixedList
+Values="XXX;"
+Captions="XXX;"
+ComboStyle=owSystem
+
+[Menu_PAGINGROW]
+ComboName=@PAGINGROW
+Type=FixedList
+Values="XXX;"
+Captions="XXX;"
+ComboStyle=owSystem
+
+[Menu_PAGEIDXCOL]
+ComboName=@PAGEIDXCOL
+Type=FixedList
+Values="XXX;"
+Captions="XXX;"
+ComboStyle=owSystem
+
+[Menu_PAGINGCOL]
+ComboName=@PAGINGCOL
+Type=FixedList
+Values="XXX;"
+Captions="XXX;"
+ComboStyle=owSystem
+
+'New menu are copied here based on template definition (required)
+[Menu_Measures]
+ComboName=@Measures
+Dependson=
+Type=Expression
+Selection="{{[Measures].AllMembers}}"
+Values=""
+Captions=""
+ComboStyle=wsMENU1
+ComboCaptionStyle=wsMENUCAPTION1
+ComboCaption="Measures:"
+OnChange=Submit
+IndentChars="&nbsp;&nbsp;&nbsp;"
+EvalPrmsDefault="True"
+
+[Menu_PERIODS]
+ComboName=@PERIODS
+Dependson=
+Type=Expression
+Selection="{{[PERIODS].AllMembers}}"
+Values=""
+Captions=""
+ComboStyle=wsMENU1
+ComboCaptionStyle=wsMENUCAPTION1
+ComboCaption="PERIODS:"
+OnChange=Submit
+IndentChars="&nbsp;&nbsp;&nbsp;"
+EvalPrmsDefault="True"
+
+
+[Notifications]
+
+Option Explicit
+
+Sub Notify_BeforeDIV(ByRef strTextInput, ByRef strClassName, ByRef strDIVAttributes)
+
+End Sub
+
+Sub Notify_BeforeTable(ByRef strTextInput, ByRef strClassName)
+
+End Sub
+
+Sub Notify_BeforeForm(ByRef strTextInput, ByRef strFormName, ByRef strFORMATTRIBUTES)
+
+End sub
+
+Sub Notify_AfterTable(ByRef strTextInput)
+
+	'--- LB 02/2004 added to store paging support
+	'IF CONTEXT("@PAGINGROW") > 0 THEN
+	'	strtextInput = strTextInput & "<input name='@PAGINGROW' id='@PAGINGROW' value=" & CONTEXT("@PAGINGROW") & " class='owsystem'>"
+	'	strtextInput = strTextInput & "<input name='@PAGEIDXROW' id='@PAGEIDXROW' value=" & CONTEXT("@PAGEIDXROW") & " class='owsystem'>"
+	'END IF	
+
+	'IF CONTEXT("@PAGINGCOL") > 0 THEN
+	'	strtextInput = strTextInput & "<input name='@PAGINGCOL' id='@PAGINGCOL' value=" & CONTEXT("@PAGINGCOL") & " class='owsystem'>"
+	'	strtextInput = strTextInput & "<input name='@PAGEIDXCOL' id='@PAGEIDXCOL' value=" & CONTEXT("@PAGEIDXCOL") & " class='owsystem'>"
+	'END IF
+
+End Sub
+
+Sub Notify_AfterForm(ByRef strTextInput)
+
+End Sub
+
+Sub Notify_AfterDIV(ByRef strTextInput)
+
+End Sub
+
+Sub Notify_NewCombo(ByVal strComboName, ByRef strComboStyle, ByRef strComboTDStyle, ByRef strAttributes, ByRef strTextBefore, ByRef bolCancel)
+
+End Sub
+
+Sub Notify_NewComboCaption(ByVal strComboName, ByRef strComboCaption, ByRef strComboCaptionStyle, ByRef bolCancel)
+
+End Sub
+
+Sub Notify_AfterCombo(ByVal strComboName, ByRef strText)
+
+
+End Sub
+
+Sub Notify_AddNewOptionBeforeFirstOption(ByVal strComboName, ByRef strCaption, ByRef strValue)
+
+End Sub
+
+Sub Notify_OnNewOption(ByVal strComboName, ByRef strCaption, ByRef strValue, ByVal strProperties, ByRef bolCancel)
+
+	' we must force the value of these combos (used for drill up/down in WebReporter) to their current value in order to keep current query
+	If strComboName = "ROWS" Then
+		strValue = Context("@ROWS")
+		strCaption = strValue
+	ElseIf strComboName = "COLUMNS" Then
+		strValue = Context("@COLUMNS")
+		strCaption = strValue
+	
+	' 21/04/2004 : To do paging in ASP and ASP.Net (like Drill)
+	ElseIf strComboName = "PAGEIDXCOL" Then
+		strValue = Context("@PAGEIDXCOL")
+		strCaption = strValue
+	ElseIf strComboName = "PAGINGCOL" Then
+		strValue = Context("@PAGINGCOL")
+		strCaption = strValue
+
+	ElseIf strComboName = "PAGEIDXROW" Then
+		strValue = Context("@PAGEIDXROW")
+		strCaption = strValue
+	ElseIf strComboName = "PAGINGROW" Then
+		strValue = Context("@PAGINGROW")
+		strCaption = strValue	
+		
+	End If
+
+
+
+End Sub
+
+
+Sub Notify_AddNewOptionAfterLastOption(ByVal strComboName, ByRef strCaption, ByRef strValue)
+
+End Sub
+
+Sub Notify_OnSelectCompleted(ByVal strComboName, ByRef strSelectedValue, ByRef strCompleteSelect)
+
+End Sub
+
+Sub Notify_AddButtons(ByRef strButtonsHTML)
+
+End Sub
+
+
+[GlobalNotification]
+
+Option Explicit
+
+Sub Notify_BeforeDIV(ByRef strText, ByRef strClassName, ByRef strDIVAttributes)
+
+End Sub
+
+Sub Notify_BeforeForm(ByRef strText, ByRef strClassName, ByRef strAttributes)
+
+End Sub
+
+Sub Notify_BeforeTable(ByRef strText, ByRef strClass)
+
+End Sub
+
+Sub Notify_AfterTable(ByRef strText)
+
+End Sub
+
+Sub Notify_AfterForm(ByRef strText)
+
+End Sub
+
+Sub Notify_AfterDIV(ByRef strText)
+
+End Sub
+

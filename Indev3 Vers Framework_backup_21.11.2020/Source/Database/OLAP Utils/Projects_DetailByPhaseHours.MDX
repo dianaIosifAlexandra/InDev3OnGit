@@ -1,0 +1,4 @@
+"SELECT {[PERIODS].Members} ON COLUMNS,
+             NON EMPTY {[PROG_CC].Members} ON ROWS
+FROM Projects
+WHERE ([Measures].[HoursQty], [CAT_PROG].[Reforecast])"

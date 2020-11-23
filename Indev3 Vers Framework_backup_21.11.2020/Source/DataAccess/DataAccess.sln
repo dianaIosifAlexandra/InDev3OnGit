@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{69C2A2ED-6A08-47BF-B24C-076A4F592C53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessTests", "UnitTests\DataAccessTests\DataAccessTests.csproj", "{0AE67D74-10E6-4AEF-8ACA-EE0CD0306C24}"
+	ProjectSection(ProjectDependencies) = postProject
+		{69C2A2ED-6A08-47BF-B24C-076A4F592C53} = {69C2A2ED-6A08-47BF-B24C-076A4F592C53}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{69C2A2ED-6A08-47BF-B24C-076A4F592C53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69C2A2ED-6A08-47BF-B24C-076A4F592C53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69C2A2ED-6A08-47BF-B24C-076A4F592C53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69C2A2ED-6A08-47BF-B24C-076A4F592C53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AE67D74-10E6-4AEF-8ACA-EE0CD0306C24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AE67D74-10E6-4AEF-8ACA-EE0CD0306C24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AE67D74-10E6-4AEF-8ACA-EE0CD0306C24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AE67D74-10E6-4AEF-8ACA-EE0CD0306C24}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,35 @@
+C:\INDev3\trunk\Source\Bin\Inergy.Indev3.WebFramework.dll
+C:\INDev3\trunk\Source\Bin\Inergy.Indev3.WebFramework.pdb
+C:\INDev3\trunk\Source\Framework\WebFramework\obj\Debug\WebFramework.csprojResolveAssemblyReference.cache
+C:\INDev3\trunk\Source\Framework\WebFramework\obj\Debug\Inergy.Indev3.WebFramework.dll
+C:\INDev3\trunk\Source\Framework\WebFramework\obj\Debug\Inergy.Indev3.WebFramework.pdb
+F:\INDev3\trunk\Source\Bin\Inergy.Indev3.WebFramework.dll
+F:\INDev3\trunk\Source\Bin\Inergy.Indev3.WebFramework.pdb
+F:\INDev3\trunk\Source\Framework\WebFramework\obj\Debug\WebFramework.csprojResolveAssemblyReference.cache
+F:\INDev3\trunk\Source\Framework\WebFramework\obj\Debug\Inergy.Indev3.WebFramework.dll
+F:\INDev3\trunk\Source\Framework\WebFramework\obj\Debug\Inergy.Indev3.WebFramework.pdb
+F:\Indev3_2\trunk\Source\Bin\Inergy.Indev3.WebFramework.dll
+F:\Indev3_2\trunk\Source\Bin\Inergy.Indev3.WebFramework.pdb
+F:\Indev3_2\trunk\Source\Framework\WebFramework\obj\Debug\WebFramework.csprojResolveAssemblyReference.cache
+F:\Indev3_2\trunk\Source\Framework\WebFramework\obj\Debug\Inergy.Indev3.WebFramework.dll
+F:\Indev3_2\trunk\Source\Framework\WebFramework\obj\Debug\Inergy.Indev3.WebFramework.pdb
+D:\Indev3\trunk\Source\Bin\Inergy.Indev3.WebFramework.dll
+D:\Indev3\trunk\Source\Bin\Inergy.Indev3.WebFramework.pdb
+D:\Indev3\trunk\Source\Framework\WebFramework\obj\Debug\WebFramework.csprojResolveAssemblyReference.cache
+D:\Indev3\trunk\Source\Framework\WebFramework\obj\Debug\Inergy.Indev3.WebFramework.dll
+D:\Indev3\trunk\Source\Framework\WebFramework\obj\Debug\Inergy.Indev3.WebFramework.pdb
+D:\Indev3 svn\trunk\Source\Bin\Inergy.Indev3.WebFramework.dll
+D:\Indev3 svn\trunk\Source\Bin\Inergy.Indev3.WebFramework.pdb
+D:\Indev3 svn\trunk\Source\Framework\WebFramework\obj\Debug\WebFramework.csprojResolveAssemblyReference.cache
+D:\Indev3 svn\trunk\Source\Framework\WebFramework\obj\Debug\Inergy.Indev3.WebFramework.dll
+D:\Indev3 svn\trunk\Source\Framework\WebFramework\obj\Debug\Inergy.Indev3.WebFramework.pdb
+D:\Indev3 Vers Framework\Source\Bin\Inergy.Indev3.WebFramework.dll
+D:\Indev3 Vers Framework\Source\Bin\Inergy.Indev3.WebFramework.pdb
+D:\Indev3 Vers Framework\Source\Framework\WebFramework\obj\Debug\WebFramework.csprojResolveAssemblyReference.cache
+D:\Indev3 Vers Framework\Source\Framework\WebFramework\obj\Debug\Inergy.Indev3.WebFramework.dll
+D:\Indev3 Vers Framework\Source\Framework\WebFramework\obj\Debug\Inergy.Indev3.WebFramework.pdb
+D:\Projects\Indev3 Vers Framework\Source\Bin\Inergy.Indev3.WebFramework.dll
+D:\Projects\Indev3 Vers Framework\Source\Bin\Inergy.Indev3.WebFramework.pdb
+D:\Projects\Indev3 Vers Framework\Source\Framework\WebFramework\obj\Debug\WebFramework.csprojResolveAssemblyReference.cache
+D:\Projects\Indev3 Vers Framework\Source\Framework\WebFramework\obj\Debug\Inergy.Indev3.WebFramework.dll
+D:\Projects\Indev3 Vers Framework\Source\Framework\WebFramework\obj\Debug\Inergy.Indev3.WebFramework.pdb

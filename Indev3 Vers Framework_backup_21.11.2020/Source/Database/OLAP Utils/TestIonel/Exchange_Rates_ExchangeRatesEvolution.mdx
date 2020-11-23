@@ -1,0 +1,8 @@
+"--Get exchange rates for default selected member in PERIODS
+WITH SET CurCode as '{CUR_Code.CurrencyCode.Members}' 
+          SET MonthsOfYear as '{Ancestor(PERIODS.DefaultMember, iif(PERIODS.DefaultMember.Level.Name=""Month"", 1,0)).Children}'
+SELECT  MonthsOfYear ON COLUMNS, 
+              CurCode ON ROWS
+FROM Exchange_Rates
+WHERE  (Measures.ExchangeRate, CUR_Name.DefaultMember)
+"

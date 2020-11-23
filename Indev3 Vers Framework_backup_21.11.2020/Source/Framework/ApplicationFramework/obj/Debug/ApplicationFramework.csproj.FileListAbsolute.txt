@@ -1,0 +1,29 @@
+C:\INDev3\trunk\Source\Bin\Inergy.Indev3.ApplicationFramework.dll
+C:\INDev3\trunk\Source\Bin\Inergy.Indev3.ApplicationFramework.pdb
+C:\INDev3\trunk\Source\Framework\ApplicationFramework\obj\Debug\Inergy.Indev3.ApplicationFramework.dll
+C:\INDev3\trunk\Source\Framework\ApplicationFramework\obj\Debug\Inergy.Indev3.ApplicationFramework.pdb
+F:\INDev3\trunk\Source\Bin\Inergy.Indev3.ApplicationFramework.dll
+F:\INDev3\trunk\Source\Bin\Inergy.Indev3.ApplicationFramework.pdb
+F:\INDev3\trunk\Source\Framework\ApplicationFramework\obj\Debug\Inergy.Indev3.ApplicationFramework.dll
+F:\INDev3\trunk\Source\Framework\ApplicationFramework\obj\Debug\Inergy.Indev3.ApplicationFramework.pdb
+F:\Indev3_2\trunk\Source\Bin\Inergy.Indev3.ApplicationFramework.dll
+F:\Indev3_2\trunk\Source\Bin\Inergy.Indev3.ApplicationFramework.pdb
+F:\Indev3_2\trunk\Source\Framework\ApplicationFramework\obj\Debug\Inergy.Indev3.ApplicationFramework.dll
+F:\Indev3_2\trunk\Source\Framework\ApplicationFramework\obj\Debug\Inergy.Indev3.ApplicationFramework.pdb
+D:\Indev3\trunk\Source\Bin\Inergy.Indev3.ApplicationFramework.dll
+D:\Indev3\trunk\Source\Bin\Inergy.Indev3.ApplicationFramework.pdb
+D:\Indev3\trunk\Source\Framework\ApplicationFramework\obj\Debug\Inergy.Indev3.ApplicationFramework.dll
+D:\Indev3\trunk\Source\Framework\ApplicationFramework\obj\Debug\Inergy.Indev3.ApplicationFramework.pdb
+D:\Indev3 svn\trunk\Source\Bin\Inergy.Indev3.ApplicationFramework.dll
+D:\Indev3 svn\trunk\Source\Bin\Inergy.Indev3.ApplicationFramework.pdb
+D:\Indev3 svn\trunk\Source\Framework\ApplicationFramework\obj\Debug\Inergy.Indev3.ApplicationFramework.dll
+D:\Indev3 svn\trunk\Source\Framework\ApplicationFramework\obj\Debug\Inergy.Indev3.ApplicationFramework.pdb
+D:\Indev3 Vers Framework\Source\Bin\Inergy.Indev3.ApplicationFramework.dll
+D:\Indev3 Vers Framework\Source\Bin\Inergy.Indev3.ApplicationFramework.pdb
+D:\Indev3 Vers Framework\Source\Framework\ApplicationFramework\obj\Debug\Inergy.Indev3.ApplicationFramework.dll
+D:\Indev3 Vers Framework\Source\Framework\ApplicationFramework\obj\Debug\Inergy.Indev3.ApplicationFramework.pdb
+D:\Indev3 Vers Framework\Source\Framework\ApplicationFramework\obj\Debug\ApplicationFramework.csprojResolveAssemblyReference.cache
+D:\Projects\Indev3 Vers Framework\Source\Bin\Inergy.Indev3.ApplicationFramework.dll
+D:\Projects\Indev3 Vers Framework\Source\Bin\Inergy.Indev3.ApplicationFramework.pdb
+D:\Projects\Indev3 Vers Framework\Source\Framework\ApplicationFramework\obj\Debug\Inergy.Indev3.ApplicationFramework.dll
+D:\Projects\Indev3 Vers Framework\Source\Framework\ApplicationFramework\obj\Debug\Inergy.Indev3.ApplicationFramework.pdb

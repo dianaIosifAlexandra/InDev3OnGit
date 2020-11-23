@@ -1,0 +1,79 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3EE2F065-216D-4C19-8B44-200CD50B2A6B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Inergy.Indev3.ApplicationFramework</RootNamespace>
+    <AssemblyName>Inergy.Indev3.ApplicationFramework</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationConstants.cs" />
+    <Compile Include="ApplicationMessages.cs" />
+    <Compile Include="Attributes\GridColumnPropertyAttribute.cs" />
+    <Compile Include="Attributes\IsInLogicalKeyAttribute.cs" />
+    <Compile Include="Attributes\DesignerNameAttribute.cs" />
+    <Compile Include="Attributes\PropertyValidationAttribute.cs" />
+    <Compile Include="Attributes\ReferenceMapping.cs" />
+    <Compile Include="Attributes\SortByAttribute.cs" />
+    <Compile Include="BudgetStates.cs" />
+    <Compile Include="Common\ApplicationUtils.cs" />
+    <Compile Include="Common\Collections.cs" />
+    <Compile Include="Common\ConversionUtils.cs" />
+    <Compile Include="Common\DateTimeUtils.cs" />
+    <Compile Include="Common\DSUtils.cs" />
+    <Compile Include="ApplicationSettings.cs" />
+    <Compile Include="Common\Enums.cs" />
+    <Compile Include="Common\IndPair.cs" />
+    <Compile Include="Common\Rounding.cs" />
+    <Compile Include="Common\YearMonth.cs" />
+    <Compile Include="Diagnosis\Logger.cs" />
+    <Compile Include="EmailSupport.cs" />
+    <Compile Include="EncryptingSupport.cs" />
+    <Compile Include="ExceptionHandling\IndException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Timing&amp;Interco\IntercoLogicalKey.cs" />
+    <Compile Include="TransactionsManager.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

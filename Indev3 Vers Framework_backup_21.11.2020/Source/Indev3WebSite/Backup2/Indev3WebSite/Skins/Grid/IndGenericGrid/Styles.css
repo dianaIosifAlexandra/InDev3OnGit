@@ -1,0 +1,202 @@
+/* r.a.d.grid IndGenericGrid skin */
+
+/* 
+	To correctly apply this skin
+	specify Border="0" in the r.a.d.grid server tag
+	<mastertableview border="0"></mastertableview>
+*/
+
+.RadGrid_IndGenericGrid
+{
+	border: solid 0px #E9E9E9;
+	border-top: 0px;
+	font: normal 11px Arial, Verdana, Sans-serif;
+	background-color:#9d9d9d; 
+	cursor: default;
+	width: auto !important;
+	text-align: left;
+}
+
+.MasterTable_IndGenericGrid
+{
+	border: 1px;
+	width: auto !important;
+	border-collapse: separate !important;
+	background-color:#CBCBCB;
+}
+
+
+div.RadGrid_IndGenericGrid table td
+{
+	padding: 0px 4px;
+}
+
+.GridFilterRow_IndGenericGrid
+{
+	background:#296c8f;
+}
+
+.GridFilterRow_IndGenericGrid th 
+{
+	text-align:center;
+}
+
+
+.GridFilterRow_IndGenericGrid input 
+{
+	font-size:10px;
+}
+
+.GridFilterRow_IndGenericGrid td
+{
+	padding-left:0px !important;
+	padding-right:0px !important;
+}
+
+
+.GridRow_IndGenericGrid td
+{
+	padding: 2px 4px !important;
+	background-color:#CBCBCB;
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+	border-bottom-color:#a2a2a2;
+}
+
+.GridAltRow_IndGenericGrid td
+{
+	padding: 2px 4px !important;
+	background-color:#CBCBCB;
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+	border-bottom-color:#a2a2a2;
+}
+
+.SelectedRow_IndGenericGrid td
+{
+	border-top: solid 0px #dcdddf;
+	border-bottom: solid 1px #b5bac0;
+	background: #f8f8f8;
+	padding: 2px 4px !important;
+}
+
+.ActiveRow_IndGenericGrid td
+{
+	border-top: solid 0px #dcdddf;
+	border-bottom: solid 0px #b5bac0;
+	background-color: red;
+	padding: 2px 4px !important;
+}
+
+th.GridHeader_IndGenericGrid, th.ResizeHeader_IndGenericGrid
+{
+	background:  url('Img/headerBg.gif') no-repeat top;
+	padding-left: 4px;
+	padding-top:9px;
+	padding-bottom:0px;
+	
+	text-align: left;
+	vertical-align:bottom;
+	color: #f0f5f6;
+	font-size: 12px;
+	background-color:#296c8f;
+	
+	white-space:normal !important;
+}
+
+.GridElements_IndGenericGrid_Hide
+{
+    border:1px solid red;
+    display:none;
+}
+
+th.GridHeader_IndGenericGrid a
+{
+	text-decoration: none;
+	color: #f0f5f6 !important;
+}
+
+/* ascending / descending sorting arrow */
+.GridHeader_IndGenericGrid img,
+.GroupPanelItems_IndGenericGrid input
+{
+	vertical-align: middle;
+}
+
+td.GridHeader_IndGenericGrid input
+{
+	width: auto;
+	float: left;
+	border: solid 0px #474b38;
+	background-color: #fafafa;
+	font: bold 10px Verdana, Arial, Sans-serif;
+	color: #989cb0;
+	margin-right: 2px;
+}
+
+.GroupPanel_IndGenericGrid
+{
+	width: 100%;
+	height: 29px;
+	text-align: left;
+	color: #fff;
+}
+
+/* grouping button */
+.GroupPanelItems_IndGenericGrid
+{
+	color: #54626f;
+	border: solid 0px #fff;
+	padding-left: 4px;
+	white-space:  nowrap;
+	font-size: 11px;
+}
+
+tr.GroupHeader_IndGenericGrid
+{
+	color: #f0f5f6;
+	font-weight: bold;
+}
+
+tr.GridPager_IndGenericGrid
+{
+	background-color:Green;
+	color: white;
+	cursor: default;
+	height: 18px;
+}
+
+.GridPager_IndGenericGrid a
+{
+	background-color:Green;
+	color: #f0f5f6;
+	font-weight: bold;
+}
+
+.IndGridEditColumn
+{
+	text-align:center;
+	padding-left:4px;
+	width:30px;
+	background-color:#E9E9E9 !important;
+}
+
+.IndGridDeleteColumn
+{
+	text-align:center;
+	padding-left:4px;
+	width:28px;
+	background-color:#CBCBCB !important;
+}
+
+.IndOddColumn
+{
+	background-color:#E9E9E9 !important;
+	text-align: left;
+}
+
+.IndEvenColumn
+{
+	background-color:#CBCBCB !important;
+	text-align: left;
+}

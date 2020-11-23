@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MenuReporting>
+  <MenuItem Text="External">
+    <MenuItem Text="Hours by WP" Window="new" UrlType="absolute" NavigateUrl="http://pro1vm00020bs5/QvAJAXZfc/AccessPoint.aspx?open=&id=QVS@pro1vm00020bs5%7CINDEV%20Report%20-%20Hours%20By%20WP.qvw&client=Plugin">
+    </MenuItem>
+    <MenuItem Text="Active program" Window="new" UrlType="absolute" NavigateUrl="http://pro1vm00020bs5/QvAJAXZfc/AccessPoint.aspx?open=&id=QVS@pro1vm00020bs5%7CINDEV%20Report%20-%20Active%20Program.qvw&client=Plugin">
+    </MenuItem>
+  </MenuItem>
+</MenuReporting>

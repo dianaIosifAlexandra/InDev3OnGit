@@ -1,0 +1,4 @@
+"SELECT {[CAT_PROG].[Initial Budget], [CAT_PROG].[Initial vs. Revised], [CAT_PROG].[Revised Budget], [CAT_PROG].[Actual], [CAT_PROG].[%Progress], [CAT_PROG].[Reforecast], [CAT_PROG].[Gap]} ON COLUMNS,
+             NON EMPTY {[PROG_CC].Members} ON ROWS
+FROM Projects
+WHERE ([Measures].[Cost], [PERIODS].[Total].[2008])"

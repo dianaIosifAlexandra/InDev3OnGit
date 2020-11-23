@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MenuReporting>
+  <MenuItem Text="External">
+    <MenuItem Text="Hours by WP" Window="new" UrlType="absolute" NavigateUrl="http://iris.corp.ponet/QvAJAXZfc/opendoc.htm?document=poai%5Cindev%20report%20-%20hours%20by%20wp.qvw&host=QVS%40PROD">
+    </MenuItem>
+    <MenuItem Text="Active program" Window="new" UrlType="absolute" NavigateUrl="http://iris.corp.ponet/QvAJAXZfc/opendoc.htm?document=poai%5Cindev%20report%20-%20hours%20by%20wp.qvw&host=QVS%40PROD">
+    </MenuItem>
+  </MenuItem>
+</MenuReporting>

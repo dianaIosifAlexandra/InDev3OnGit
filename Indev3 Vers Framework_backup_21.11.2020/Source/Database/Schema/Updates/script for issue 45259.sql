@@ -1,0 +1,20 @@
+UPDATE ADDH
+SET ADDH.HoursVal = dbo.fnGetValuedHours(ADDH.IdCostCenter, ADDH.HoursQty, ADDH.YearMonth)
+FROM ACTUAL_DATA_DETAILS_HOURS ADDH
+	inner join IMPORT_LOGS IL
+	ON ADDH.IdImport = IL.IdImport
+	inner join IMPORT_SOURCES ISRC
+	ON IL.IdSource = ISRC.Id
+	inner join IMPORT_APPLICATION_TYPES IAT
+	ON IAT.Id = ISRC.IdApplicationTypes
+WHERE IAT.Id = 3
+
+SELECT *
+FROM ACTUAL_DATA_DETAILS_HOURS ADDH
+	inner join IMPORT_LOGS IL
+	ON ADDH.IdImport = IL.IdImport
+	inner join IMPORT_SOURCES ISRC
+	ON IL.IdSource = ISRC.Id
+	inner join IMPORT_APPLICATION_TYPES IAT
+	ON IAT.Id = ISRC.IdApplicationTypes
+WHERE IAT.Id = 3

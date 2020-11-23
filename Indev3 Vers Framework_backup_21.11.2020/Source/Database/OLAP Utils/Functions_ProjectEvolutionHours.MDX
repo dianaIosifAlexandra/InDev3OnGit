@@ -1,0 +1,6 @@
+"WITH SET cols AS '{PERIODS.DefaultMember.Children}'
+          SET rows AS '{PROGRAM_LIST.Members}'
+SELECT cols ON COLUMNS,
+             NON EMPTY rows ON ROWS
+FROM Functions
+WHERE (Measures.HoursQty, CAT_FCT.DefaultMember, SCALING.DefaultMember, COST_TYPE.DefaultMember, UNIT.DefaultMember, CUR_CODE.DefaultMember)"

@@ -1,0 +1,44 @@
+﻿html 
+{
+	overflow:auto;
+	height:100%;
+	margin: 0;
+	padding: 0;
+	border: none;
+
+}
+body, #MainTable 
+{
+	height:100%;
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+.tabbed {
+	background:#757575 url('../images/back_tab.png') no-repeat right bottom;
+	border:1px solid #5d5d5d;
+	width: 100%;
+	margin-top: 40px;
+    padding-bottom: 70px;
+    padding-top: 20px;
+}
+
+.tabbedNoImage 
+{
+	background:#757575;
+	border:1px solid #5d5d5d;
+	padding:1px 1px 1px 1px;
+}
+
+.tabbedPadding {
+	background:#757575 url('../images/back_tab.png') no-repeat right bottom;
+	border:1px solid #5d5d5d; padding-left:20px;padding-right:20px;
+}
+
+.tabbedNoImageGrey
+{
+	background:#999999;
+	border:1px solid #5d5d5d;
+	padding:1px 1px 1px 1px;
+}

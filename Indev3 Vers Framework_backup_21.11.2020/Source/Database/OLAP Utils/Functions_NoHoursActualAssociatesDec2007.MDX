@@ -1,0 +1,6 @@
+"--Get the associates that did not fill in any actual hours in december 2007
+WITH SET [NoHoursAssociates] AS 'Filter({[ASSOCIATES].[Associate Name].Members}, IsEmpty([Measures].[HoursQty]))'
+SELECT {[Measures].[HoursQty], [Measures].[Averate], [Measures].[HoursVal], [Measures].[Cost], [Measures].[Gross]} ON COLUMNS,
+            [NoHoursAssociates]  ON ROWS
+FROM Functions
+WHERE ([PERIODS].[Total].[2007].[Dec 2007], [CAT_FCT].[Total].[Actual])"

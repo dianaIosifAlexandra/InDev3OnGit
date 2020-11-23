@@ -1,0 +1,48 @@
+CREATE TABLE [dbo].[OLAP_GA_RATES] (
+	[IdCountry] [int] NOT NULL ,
+	[YearMonth] [int] NOT NULL ,
+	[Rate] [decimal](18, 2) NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[OLAP_MARKUP_RATES] (
+	[Year] [int] NOT NULL ,
+	[Rate] [decimal](18, 2) NOT NULL 
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[OLAP_GA_RATES] WITH NOCHECK ADD 
+	CONSTRAINT [PK_OLAP_GARates] PRIMARY KEY  CLUSTERED 
+	(
+		[IdCountry],
+		[YearMonth]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [dbo].[OLAP_MARKUP_RATES] WITH NOCHECK ADD 
+	CONSTRAINT [PK_OLAP_MARKUPRATE] PRIMARY KEY  CLUSTERED 
+	(
+		[Year]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [dbo].[OLAP_GA_RATES] ADD 
+	CONSTRAINT [CK_OLAP_GARates] CHECK ([Rate] >= 0),
+	CONSTRAINT [CK_OLAP_GARates_Month_Overflow] CHECK ([yearmonth] % 100 >= 1 and [yearmonth] % 100 <= 12),
+	CONSTRAINT [CK_OLAP_GARATES_Year_Overflow] CHECK ([yearmonth] / 100 >= 1900 and [yearmonth] / 100 < 2079)
+GO
+
+ALTER TABLE [dbo].[OLAP_MARKUP_RATES] ADD 
+	CONSTRAINT [CK_OLAP_MARKUPRATE_MarkUpRate] CHECK ([Rate] >= 0),
+	CONSTRAINT [CK_OLAP_MARKUPRATE_Overflow] CHECK ([year] >= 1900 and [year] < 2079)
+GO
+
+ALTER TABLE [dbo].[OLAP_GA_RATES] ADD 
+	CONSTRAINT [FK_OLAP_GARates_COUNTRIES] FOREIGN KEY 
+	(
+		[IdCountry]
+	) REFERENCES [dbo].[COUNTRIES] (
+		[Id]
+	)
+GO
+

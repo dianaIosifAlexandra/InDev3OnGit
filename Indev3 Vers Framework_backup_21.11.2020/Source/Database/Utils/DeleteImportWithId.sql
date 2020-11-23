@@ -1,0 +1,18 @@
+DELETE ACTUAL_DATA_DETAILS_HOURS where IdImport=184
+DELETE ACTUAL_DATA_DETAILS_SALES where IdImport=184
+DELETE ACTUAL_DATA_DETAILS_COSTS where IdImport=184
+ 
+DELETE IMPORT_LOGS_DETAILS where IdImport=184
+DELETE IMPORT_LOGS where IdImport=184
+DELETE IMPORT_DETAILS_KEYROWS_MISSING where IdImport=184
+DELETE IMPORT_DETAILS where IdImport=184
+DELETE IMPORTS where IdImport=184
+
+select * from ACTUAL_DATA_DETAILS_HOURS where IdImport=184
+select * from ACTUAL_DATA_DETAILS_SALES where IdImport=184
+select * from ACTUAL_DATA_DETAILS_COSTS where IdImport=184
+ 
+select * from IMPORT_LOGS_DETAILS where IdImport=184
+select * from IMPORT_LOGS where IdImport=184
+select * from IMPORT_DETAILS where IdImport=184
+select * from IMPORTS where IdImport=184

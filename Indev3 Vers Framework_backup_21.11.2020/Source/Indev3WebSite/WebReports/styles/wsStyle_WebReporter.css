@@ -1,0 +1,258 @@
+.owbutton
+{
+    BORDER-LEFT-COLOR: blue;
+    BORDER-BOTTOM-COLOR: blue;
+    MARGIN: 4px;
+    COLOR: blue;
+    BORDER-TOP-COLOR: blue;
+    BORDER-RIGHT-COLOR: blue;
+    /*border-spacing: 2px;*/
+}
+
+.owinput
+{
+    /*BORDER-RIGHT: white 2px inset;
+    BORDER-TOP: white 2px inset;
+    BORDER-LEFT: white 2px inset;
+    BORDER-BOTTOM: white 2px inset;*/
+    FONT-WEIGHT: normal;
+    FONT-SIZE: xx-small;
+    COLOR: black;
+    FONT-FAMILY: ;
+    BACKGROUND-COLOR: white;
+    TEXT-ALIGN: center
+}
+
+.updated
+{
+    /*BORDER-RIGHT: white 2px inset;
+    BORDER-TOP: white 2px inset;
+    BORDER-LEFT: white 2px inset;
+    BORDER-BOTTOM: white 2px inset;*/
+    FONT-WEIGHT: normal;
+    FONT-SIZE: xx-small;
+    COLOR: black;
+    FONT-FAMILY: ;
+    BACKGROUND-COLOR: #ffcc66;
+    TEXT-ALIGN: center
+}
+
+.TOTAL /* --------------------- Couleur ligne total */
+{
+    background-color:#F9F500;
+	font-weight: bold;
+	text-align: center;
+}
+
+
+.headerT /* --------------------- Couleur header total */
+{
+    background-color:#F9F500;
+	font-weight: bold;
+	text-align: left;
+}
+
+
+.headerB /* --------------------- Couleur header total */
+{
+    background-color:transparent;
+	color:white;
+	font-weight: bold;
+	font-style: italic;
+	text-align: center;
+}
+
+
+.colomnC /* --------------------- Couleur colonne standard */
+{
+
+    background-color:#FFFFDD;
+	text-align: right;
+}
+
+
+}
+
+.colomnB /* --------------------- Couleur colonne calculée */
+{
+
+    color:white;
+	font-style: italic;
+	text-align: center;
+}
+
+
+.owrowheader /* --------------------- Default style for row headers */
+{
+    color: black;
+	font-weight: bold;
+	text-align: left;
+	background-color: #F9F500;
+	position : relative;
+	padding: 3px 5px;
+	}
+
+.owtopleftcell
+{
+    COLOR: black;
+    BACKGROUND-COLOR: transparent;
+    TEXT-ALIGN: right
+}
+
+.owcolumnheader /* --------------------- Default style for column headers*/
+{
+    color: white;
+	font-weight: bold;
+	text-align: center;
+	background-color: #000066;
+	padding: 4px 5px;
+}
+
+.EmptyCell
+{
+    VISIBILITY: hidden;
+    WIDTH: 0pt;
+    BACKGROUND-COLOR: white
+}
+
+.owerrmsg
+{
+    FONT-SIZE: 12pt;
+	font-weight: bold;
+	font-style: italic;    
+	COLOR: white; 
+}
+
+.owdivdttable
+{
+    /*BORDER-RIGHT: black 1pt solid;
+    BORDER-TOP: black 1pt solid;
+    BORDER-LEFT: black 1pt solid;
+    BORDER-BOTTOM: black 1pt solid;
+    border: none 1pt silver;
+    BACKGROUND-COLOR: #f8f9f8;*/
+    BACKGROUND-COLOR: Transparent;
+    TEXT-ALIGN: center
+}
+
+.owdivhrtable
+{
+    BACKGROUND-COLOR: darkviolet
+}
+
+.owtitle
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: x-small;
+    TEXT-TRANSFORM: none;
+    COLOR: navy;
+    FONT-STYLE: normal;
+    TEXT-ALIGN: center;
+    
+}
+
+.owimgdrill
+{
+    CURSOR: hand
+}
+
+.owimgorder
+{
+    CURSOR: hand
+}
+
+.owimgdt
+{
+    CURSOR: hand
+}
+
+.owdatacell /* --------------------- Default style for cells*/
+{
+    TEXT-ALIGN: center;
+    COLOR: black;
+
+}
+
+.owcell
+{
+    TEXT-ALIGN: center;
+    COLOR: black;
+    background-color: #FFFFDD;
+}
+
+.owcell2
+{
+    TEXT-ALIGN: center;
+    COLOR: black;
+    background-color: #FFFFDD;
+}
+
+.owcontainer
+{
+}
+
+.owinputcell
+{
+    /*BORDER-RIGHT: midnightblue 1pt;
+    BORDER-TOP: midnightblue 1pt;
+    BORDER-LEFT: midnightblue 1pt;
+    BORDER-BOTTOM: midnightblue 1pt;*/
+    FONT-WEIGHT: normal;
+    FONT-SIZE: xx-small;
+    COLOR: black;
+    FONT-FAMILY: ;
+    BACKGROUND-COLOR: white;
+    TEXT-ALIGN: center
+}
+
+.owcellupdated
+{
+    /*BORDER-RIGHT: white 2px inset;
+    BORDER-TOP: white 2px inset;
+    BORDER-LEFT: white 2px inset;
+    BORDER-BOTTOM: white 2px inset;*/
+    FONT-WEIGHT: normal;
+    FONT-SIZE: xx-small;
+    COLOR: black;
+    FONT-FAMILY: ;
+    BACKGROUND-COLOR: #ffcc66;
+    TEXT-ALIGN: center
+}
+
+.owdivwbbuttons
+{
+    BACKGROUND-COLOR: transparent;
+    TEXT-ALIGN: center
+}
+
+.owbutton
+{
+    /*BORDER-RIGHT: #4f5053 1px solid;
+    BORDER-TOP: #4f5053 1px solid;
+    BORDER-LEFT: #4f5053 1px solid;
+    BORDER-BOTTOM: #4f5053 1px solid;*/
+    FONT-SIZE: 11px;
+    CURSOR: hand;
+    COLOR: #000000;
+    FONT-FAMILY: , , Helvetica, Geneva;
+    BACKGROUND-COLOR: #ffffff
+}
+
+.owcellcolorcoding
+{
+    FONT-WEIGHT: normal;
+    FONT-SIZE: xx-small;
+    COLOR: #000000;
+    TEXT-ALIGN: center;
+}
+
+.owsystem
+{
+    DISPLAY: none;
+    VISIBILITY: hidden
+}
+
+.Value_TR
+{
+	background-color:White;
+}

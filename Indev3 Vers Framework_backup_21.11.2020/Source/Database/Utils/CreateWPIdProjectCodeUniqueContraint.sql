@@ -1,0 +1,20 @@
+IF EXISTS
+(
+	SELECT *
+	FROM sysindexes
+	WHERE id = object_id('WORK_PACKAGES')
+	AND name='UQ_WORK_PACKAGES_IdProject_Code'
+)
+ALTER TABLE [dbo].[WORK_PACKAGES] DROP
+	CONSTRAINT [UQ_WORK_PACKAGES_IdProject_Code]
+GO
+
+
+ALTER TABLE [dbo].[WORK_PACKAGES] ADD 
+	CONSTRAINT [UQ_WORK_PACKAGES_IdProject_Code] UNIQUE  NONCLUSTERED 
+	(
+		[IdProject],
+		[Code]
+	)  ON [PRIMARY] 
+GO
+

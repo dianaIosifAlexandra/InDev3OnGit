@@ -1,0 +1,6 @@
+"WITH SET cols AS '{COST_TYPE.CostTypeName.Members}'
+          SET rows AS '{PROGRAM_LIST.Members}'
+SELECT cols ON COLUMNS,
+             NON EMPTY rows ON ROWS
+FROM Functions
+WHERE (Measures.Cost, PERIODS.DefaultMember, FCT_CC.DefaultMember, CAT_FCT.DefaultMember, SCALING.DefaultMember, UNIT.DefaultMember, CUR_CODE.DefaultMember)"

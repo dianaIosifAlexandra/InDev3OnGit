@@ -1,0 +1,89 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Template.master.cs" Inherits="Inergy.Indev3.UI.Template"%>
+<%@ Register Assembly="RadComboBox.Net2" Namespace="Telerik.WebControls" TagPrefix="radC" %>
+
+<%@ Register Assembly="RadAjax.Net2" Namespace="Telerik.WebControls" TagPrefix="radA" %>
+
+<%@ Register Src="UserControls/Visuals/RightFooter.ascx" TagName="RightFooter" TagPrefix="uc9" %>
+
+<%@ Register Assembly="RadGrid.Net2" Namespace="Telerik.WebControls" TagPrefix="radG" %>
+
+<%@ Register Src="UserControls/Visuals/StatusBar.ascx" TagName="StatusBar" TagPrefix="uc8" %>
+
+<%@ Register Src="UserControls/Visuals/Navigation.ascx" TagName="Navigation" TagPrefix="uc7" %>
+
+<%@ Register Src="UserControls/Visuals/BreadCrumb.ascx" TagName="BreadCrumb" TagPrefix="uc6" %>
+
+<%@ Register Src="UserControls/Visuals/ProjectSelection.ascx" TagName="ProjectSelection"
+    TagPrefix="uc5" %>
+
+<%@ Register Src="UserControls/Visuals/MainMenu.ascx" TagName="MainMenu" TagPrefix="uc4" %>
+
+<%@ Register Assembly="Inergy.Indev3.WebFramework" Namespace="Inergy.Indev3.WebFramework"
+    TagPrefix="cc1" %>
+
+<%@ Register Assembly="Inergy.Indev3.WebFramework" Namespace="Inergy.Indev3.WebFramework.WebControls"
+    TagPrefix="cc3" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>INDev 3</title>
+    <link href="Styles/WebControls.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/Layout.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/HourglassStyles.css" rel="stylesheet" type="text/css" />
+</head>
+
+<script type='text/javascript' src='<%=ResolveUrl("~/Scripts/DataGridScripts.js") %>'></script>
+<script type='text/javascript' src='<%=ResolveUrl("~/Scripts/PopUpScripts.js") %>'></script>
+<script type='text/javascript' src='<%=ResolveUrl("~/Scripts/GeneralScripts.js") %>'></script>
+<script type='text/javascript' src='<%=ResolveUrl("~/Scripts/GridScripts.js") %>'></script>
+<script type='text/javascript' src='<%=ResolveUrl("~/Scripts/DivScripts.js") %>'></script>
+<script type='text/javascript' src='<%=ResolveUrl("~/Scripts/NavigationScripts.js") %>'></script>
+<script type='text/javascript' src='<%=ResolveUrl("~/Scripts/NumberRepresentation.js") %>'></script>
+<script type='text/javascript' src='<%=ResolveUrl("~/Scripts/HourglassScripts.js") %>'></script>
+<body style="background:#6e6e6e url('<%=ResolveUrl("~/Images/abrt.png") %>') no-repeat right top " onbeforeunload="doHourglass();" onunload="doHourglass();" onload="ResponseEnd();">
+    <form id="form1" runat="server" enctype="multipart/form-data" onkeypress="return PreventFormValidationOnKeyPress()" style="height:100%">
+    <div id="MasterPageDiv" style="height:100%">
+        <table cellpadding="0" cellspacing="0" width="100%" border="0" id="MainTable">
+            <tr style="height:55px; " >
+               <td width="176" valign="top"> <img src="<%=ResolveUrl("~/Images/logo.png") %>" /></td>
+               
+                <td width="90%" style="padding-right: 0px; padding-left: 0px; padding-bottom: 0px; margin: 0px; padding-top: 0px; vertical-align: top;">
+                    <div style="width:700px;"><uc4:MainMenu ID="mnu" runat="server" EnableViewState="false"/></div>
+                  
+                </td>
+                <td rowspan="2" style="vertical-align: top; padding-top: 5px; padding-right: 10px; padding-left: 0px; padding-bottom: 0px; margin: 0px;width:250px;" nowrap align="right">
+                   <table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
+                   <tr><td style="height:30px;"><uc5:ProjectSelection ID="ps" runat="server" /></td></tr>
+                   <tr><td valign="bottom" style="height:65px;"><uc7:Navigation ID="nav" runat="server" /></td></tr></table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="width: 80%; background-image: url('<%=ResolveUrl("~/Images/bb.png") %>'); background-repeat: no-repeat; vertical-align: top;">
+                    <uc6:BreadCrumb ID="bc" runat="server" />
+                </td>
+                
+            </tr>
+            <tr id="ContentRow" style="height:60%">
+                <td colspan="3" align="center" style="background-position-x: right; background-repeat: no-repeat; vertical-align: text-top; height:100%" id="contentCell">
+                    <asp:Panel ID="pnlErrors" runat="server"></asp:Panel>
+                            <asp:contentplaceholder id="ph" runat="server">
+                            </asp:contentplaceholder>
+                    <radA:RadAjaxManager ID="Aj" runat="server" EnableOutsideScripts="True">
+                    <ClientEvents OnRequestStart="RequestStart" OnResponseEnd="ResponseEnd" />
+                    </radA:RadAjaxManager>
+                </td>
+            </tr>
+            <tr style="height:35px; background-image: url('<%=ResolveUrl("~/Images/fb.png") %>'); background-repeat:repeat-x; background-position:bottom;">
+                <td colspan="2" style="background-position-x: right; vertical-align: bottom;">
+                    <uc8:StatusBar ID="sb" runat="server" />
+                </td>
+                <td style="background-position-x: right; vertical-align: bottom; text-align: right;">
+                    <uc9:RightFooter ID="rf" runat="server" />
+                </td>
+            </tr>
+        </table>    
+    </div>
+    </form>
+</body>
+</html>

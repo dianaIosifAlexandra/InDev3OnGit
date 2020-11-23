@@ -1,0 +1,15 @@
+D:\Indev3 svn\trunk\Source\Bin\Inergy.Indev3.DataAccess.dll
+D:\Indev3 svn\trunk\Source\Bin\Inergy.Indev3.DataAccess.pdb
+D:\Indev3 svn\trunk\Source\DataAccess\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+D:\Indev3 svn\trunk\Source\DataAccess\DataAccess\obj\Debug\Inergy.Indev3.DataAccess.dll
+D:\Indev3 svn\trunk\Source\DataAccess\DataAccess\obj\Debug\Inergy.Indev3.DataAccess.pdb
+D:\Indev3 Vers Framework\Source\Bin\Inergy.Indev3.DataAccess.dll
+D:\Indev3 Vers Framework\Source\Bin\Inergy.Indev3.DataAccess.pdb
+D:\Indev3 Vers Framework\Source\DataAccess\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+D:\Indev3 Vers Framework\Source\DataAccess\DataAccess\obj\Debug\Inergy.Indev3.DataAccess.dll
+D:\Indev3 Vers Framework\Source\DataAccess\DataAccess\obj\Debug\Inergy.Indev3.DataAccess.pdb
+D:\Projects\Indev3 Vers Framework\Source\Bin\Inergy.Indev3.DataAccess.dll
+D:\Projects\Indev3 Vers Framework\Source\Bin\Inergy.Indev3.DataAccess.pdb
+D:\Projects\Indev3 Vers Framework\Source\DataAccess\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+D:\Projects\Indev3 Vers Framework\Source\DataAccess\DataAccess\obj\Debug\Inergy.Indev3.DataAccess.dll
+D:\Projects\Indev3 Vers Framework\Source\DataAccess\DataAccess\obj\Debug\Inergy.Indev3.DataAccess.pdb

@@ -1,0 +1,46 @@
+"--Get non empty exchange rates from euro, for 2007
+SELECT {[Measures].[Exchange Rate]} ON COLUMNS,
+            NON EMPTY CROSSJOIN  ({[PERIODS].[Year].[2007].Children}, {[CUR_Code].[Currency Code].Members}) ON ROWS
+FROM Exchange_Rates
+WHERE ([CUR_NAME].[EUR-Euro])
+"
+"select
+    { [Measures].[Units Shipped], [Measures].[Units Ordered] } on columns,
+    NON EMPTY [Store].[Store Name].members on rows
+from Warehouse
+"
+"with member [Measures].[Store Sales Last Period] as '([Measures].[Store Sales], Time.PrevMember)'
+select
+	{[Measures].[Store Sales Last Period]} on columns,
+	{TopCount([Product].[Product Department].members,5, [Measures].[Store Sales Last Period])} on rows
+from Sales
+where ([Time].[1998])
+"
+"with member [Measures].[Total Store Sales] as 'Sum(YTD(),[Measures].[Store Sales])'
+select
+	{[Measures].[Total Store Sales]} on columns,
+	{TopCount([Product].[Product Department].members,5, [Measures].[Total Store Sales])} on rows
+from Sales
+where ([Time].[1997].[Q2].[4])
+"
+"with member [Measures].[Store Profit Rate] as '([Measures].[Store Sales]-[Measures].[Store Cost])/[Measures].[Store Cost]', format = '#.00%'
+select
+	{[Measures].[Store Cost],[Measures].[Store Sales],[Measures].[Store Profit Rate]} on columns,
+	Order([Product].[Product Department].members, [Measures].[Store Profit Rate], BDESC) on rows
+from Sales
+where ([Time].[1997])
+"
+"with
+   member [Product].[All Products].[Drink].[Percent of Alcoholic Drinks] as '[Product].[All Products].[Drink].[Alcoholic Beverages]/[Product].[All Products].[Drink]', format = '#.00%'
+select
+   { [Product].[All Products].[Drink].[Percent of Alcoholic Drinks] } on columns,
+   order([Customers].[All Customers].[USA].[WA].Children, [Product].[All Products].[Drink].[Percent of Alcoholic Drinks],BDESC ) on rows
+from Sales
+where ( [Measures].[Unit Sales] )
+"
+"with member [Measures].[Accumulated Sales] as 'Sum(YTD(),[Measures].[Store Sales])'
+select
+	{[Measures].[Store Sales],[Measures].[Accumulated Sales]} on columns,
+	{Descendants([Time].[1997],[Time].[Month])} on rows
+from Sales
+"
